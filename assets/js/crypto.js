@@ -10,7 +10,7 @@
 
 import { safeParseJSON } from './save_parser.js';
 
-export const DEFAULT_TBH_PASSWORD = "emuMqG3bLYJ938ZDCfieWJ";
+export const DEFAULT_TBH_PASSWORD = (typeof window !== "undefined" && (window.TTBH_CRYPTO_KEY || window.TTBH_DEFAULT_CRYPTO_KEY)) || "emuMqG3bLYJ938ZDCfieWJ";
 
 export class CryptoEngine {
     constructor(password = DEFAULT_TBH_PASSWORD) {

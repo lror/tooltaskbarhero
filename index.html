@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" integrity="sha384-Ww3iylDHeh0lenEQV6v8tqX3oWv6wTRB/y1vkxT8vjtBBZ8g3Y7t7/V9KXMsZcRw" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css?v=2.6.5">
 <script src="assets/js/lib/safe_html.js"></script>
+<script src="assets/js/config/crypto_config.js"></script>
 </head>
 <body>
     <div id="app" class="app-container">
@@ -1211,6 +1212,32 @@ document.addEventListener('DOMContentLoaded', function() {
         chk.addEventListener('change', function() {
             window.TTBH_CONFIG = window.TTBH_CONFIG || {};
             window.TTBH_CONFIG.anonimizePII = this.checked;
+        });
+    }
+});
+</script>
+
+
+                <label style="display: block; margin: 10px 0; font-size: 0.9em;">
+                    Chave AES Customizada (Opcional):
+                    <input type="text" id="inputCustomAESKey" placeholder="Deixe em branco para usar a padrão" style="width: 100%; margin-top: 4px;">
+                </label>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('inputCustomAESKey');
+    if (input) {
+        input.addEventListener('change', function() {
+            if (this.value.trim()) {
+                try {
+                    window.TTBH_CRYPTO_KEY = JSON.parse(this.value);
+                } catch(e) {
+                    window.TTBH_CRYPTO_KEY = this.value;
+                }
+            } else {
+                delete window.TTBH_CRYPTO_KEY;
+            }
         });
     }
 });
