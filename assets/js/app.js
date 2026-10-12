@@ -681,7 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sevBadgeText = "OTIMIZADO";
             }
 
-            card.innerHTML = `
+            card.innerHTML = window.TTBH.safeHtml`
                 <div>
                     <div class="combat-audit-header">
                         <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700;">
@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 gearPreviewHtml = `<div class="hero-gear-pill" style="color: var(--text-muted);">Sem armas equipadas</div>`;
             }
 
-            card.innerHTML = `
+            card.innerHTML = window.TTBH.safeHtml`
                 <div class="hero-card-header">
                     <div class="hero-icon">${h.icon}</div>
                     <div class="hero-title" style="flex: 1;">
@@ -767,7 +767,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const st = hero.baseStats || {};
         const bd = hero.statBreakdowns || {};
 
-        modalHeroStats.innerHTML = `
+        modalHeroStats.innerHTML = window.TTBH.safeHtml`
             <div class="modal-stat-card">
                 <div class="modal-stat-label">Dano de Ataque Total</div>
                 <div class="modal-stat-val" style="color: #facc15;">${(st.attackDamage || 1).toLocaleString()}</div>
@@ -831,7 +831,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero.equippedSkills.forEach(sk => {
                 const item = document.createElement('div');
                 item.className = 'modal-skill-item';
-                item.innerHTML = `
+                item.innerHTML = window.TTBH.safeHtml`
                     <div>
                         <div class="modal-skill-title">⚡ ${sk.name}</div>
                         <div class="modal-skill-meta">Dano: ${sk.dmgType} • Recarga: ${sk.cooldown}s • ${sk.delivery}</div>
@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const badgeClass = isAct ? (t.isEquipped ? 'badge-tier-8' : 'badge-tier-6') : 'badge-tier-4';
                 const typeText = isAct ? (t.isEquipped ? 'Ativa (Equipada)' : 'Ativa (Reserva)') : 'Passiva';
 
-                item.innerHTML = `
+                item.innerHTML = window.TTBH.safeHtml`
                     <div>
                         <div style="font-weight: 600; color: var(--text-primary);">
                             ${isAct ? '⚡' : '🛡️'} ${t.name}
@@ -883,7 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const slotEl = document.createElement('div');
             if (slot.isEmpty) {
                 slotEl.className = 'gear-slot-item';
-                slotEl.innerHTML = `
+                slotEl.innerHTML = window.TTBH.safeHtml`
                     <div class="gear-slot-header">
                         <span class="gear-slot-type">${slot.slotName}</span>
                         <span class="gear-tag empty">Slot Vazio</span>
@@ -964,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 slotEl.className = `gear-slot-item has-item tbh-gear-card ${slot.tier === 10 ? 'badge-tier-10' : ''}`;
-                slotEl.innerHTML = `
+                slotEl.innerHTML = window.TTBH.safeHtml`
                     <div class="gear-slot-header">
                         <span class="gear-slot-type">${sIcon} ${slot.slotName}</span>
                         <div style="display: flex; gap: 0.35rem; align-items: center;">
@@ -1021,7 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? pet.buffs.map(b => `<div class="pet-buff-entry">⚡ ${b}</div>`).join('')
                 : `<div class="pet-buff-entry" style="color: var(--text-muted);">${pet.desc || 'Sem bônus registrado'}</div>`;
 
-            card.innerHTML = `
+            card.innerHTML = window.TTBH.safeHtml`
                 <div>
                     <div class="pet-card-header">
                         <div class="pet-icon-big">${pet.icon}</div>
@@ -1081,7 +1081,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (filtered.length === 0) {
             const tr = document.createElement('tr');
-            tr.innerHTML = `<td colspan="9" style="text-align: center; color: var(--text-muted); padding: 2rem;">Nenhum item corresponde aos filtros selecionados.</td>`;
+            tr.innerHTML = window.TTBH.safeHtml`<td colspan="9" style="text-align: center; color: var(--text-muted); padding: 2rem;">Nenhum item corresponde aos filtros selecionados.</td>`;
             storageTbody.appendChild(tr);
             return;
         }
@@ -1124,7 +1124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? `<span class="gear-tag badge-tier-8">📜 +${it.inscriptions}</span>` 
                 : `<span style="color: var(--text-muted); font-size: 0.75rem;">-</span>`;
 
-            tr.innerHTML = `
+            tr.innerHTML = window.TTBH.safeHtml`
                 <td>${locBadge}</td>
                 <td>
                     <strong style="color: var(--text-primary);">${it.name}</strong>
@@ -1144,7 +1144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (filtered.length > 300) {
             const tr = document.createElement('tr');
-            tr.innerHTML = `<td colspan="9" style="text-align: center; color: var(--text-secondary); padding: 0.75rem; font-size: 0.8rem; background: rgba(0,0,0,0.2);">Exibindo os primeiros 300 de ${filtered.length} itens. Use a busca para filtrar resultados específicos.</td>`;
+            tr.innerHTML = window.TTBH.safeHtml`<td colspan="9" style="text-align: center; color: var(--text-secondary); padding: 0.75rem; font-size: 0.8rem; background: rgba(0,0,0,0.2);">Exibindo os primeiros 300 de ${filtered.length} itens. Use a busca para filtrar resultados específicos.</td>`;
             storageTbody.appendChild(tr);
         }
     }
@@ -1170,7 +1170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tierClass = `badge-tier-${item.tier || 1}`;
 
-            li.innerHTML = `
+            li.innerHTML = window.TTBH.safeHtml`
                 <div class="item-left">
                     <span class="item-name">${item.name}</span>
                     <div>
@@ -1239,7 +1239,7 @@ document.addEventListener('DOMContentLoaded', () => {
                    </div>`
                 : '';
 
-            tbody.innerHTML = `
+            tbody.innerHTML = window.TTBH.safeHtml`
                 <tr>
                     <td><strong>${res.inputGrade} ➔ ${res.outputGrade}</strong></td>
                     <td><strong>${res.outputCount}</strong></td>
@@ -1515,7 +1515,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const deltaText = s.upgradeValue > 0 ? `+${s.upgradeValue}` : '—';
                 const reasonColor = s.upgradeValue > 0 ? '#60a5fa' : 'var(--text-secondary)';
 
-                tr.innerHTML = `
+                tr.innerHTML = window.TTBH.safeHtml`
                     <td><strong>${s.slotName}</strong></td>
                     <td>${curText}</td>
                     <td>${bestText}</td>
@@ -1580,7 +1580,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.style.background = 'rgba(0,0,0,0.2)';
 
                 const statusColor = r.status === 'inProgress' ? '#facc15' : '#38bdf8';
-                li.innerHTML = `
+                li.innerHTML = window.TTBH.safeHtml`
                     <span><strong>${r.name}</strong> <span style="font-size:0.75rem; color:${statusColor};">Lv.${r.currentLevel}/${r.maxLevel}</span></span>
                     <strong style="color:#fbbf24;">${r.costGold.toLocaleString('pt-BR')} G</strong>
                 `;
@@ -1722,7 +1722,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const stageColor = d.deltaStage >= 0 ? '#4ade80' : '#f87171';
                     const fmtItems = (d.deltaItems >= 0 ? '+' : '') + d.deltaItems;
 
-                    tr.innerHTML = `
+                    tr.innerHTML = window.TTBH.safeHtml`
                         <td><strong>${d.from}</strong></td>
                         <td><strong>${d.to}</strong></td>
                         <td><span style="color:var(--text-muted);">${d.timeDeltaFormatted}</span></td>
@@ -1797,7 +1797,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const suggest = farmingCalc.suggestFarmStage(heroLv, clearTime, goal);
 
             if (farmingSuggestBox && suggest) {
-                farmingSuggestBox.innerHTML = `
+                farmingSuggestBox.innerHTML = window.TTBH.safeHtml`
                     ⭐ <strong>Stage Sugerida:</strong> Stage ${suggest.stage} (${suggest.diff}) — <em>${suggest.name}</em> (Lv ${suggest.lv}) |
                     <strong>EXP/h:</strong> ${Math.round(suggest.expPerHour).toLocaleString('pt-BR')} |
                     <strong>Gold/h:</strong> ${Math.round(suggest.goldPerHour).toLocaleString('pt-BR')}
@@ -1813,7 +1813,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 const statusColor = r.status === 'OK' ? '#4ade80' : (r.status.includes('PENALTY') ? '#f87171' : '#facc15');
 
-                tr.innerHTML = `
+                tr.innerHTML = window.TTBH.safeHtml`
                     <td><strong>${r.stage}</strong></td>
                     <td><span class="badge ${r.diff.toLowerCase()}">${r.diff}</span></td>
                     <td>${r.name}</td>
@@ -1861,7 +1861,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const info = result.comparison[g] || { count: 0, actualPct: 0, expectedPct: 0, diffPct: 0 };
                 const tr = document.createElement('tr');
                 const diffColor = info.diffPct >= 0 ? '#4ade80' : '#f87171';
-                tr.innerHTML = `
+                tr.innerHTML = window.TTBH.safeHtml`
                     <td><strong>${g}</strong></td>
                     <td>${info.count.toLocaleString('pt-BR')}</td>
                     <td>${info.actualPct.toFixed(2)}%</td>
@@ -2017,7 +2017,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const best = suggestions[0];
             if (chestOptSuggestionCard && best) {
-                chestOptSuggestionCard.innerHTML = `
+                chestOptSuggestionCard.innerHTML = window.TTBH.safeHtml`
                     ⭐ <strong>Melhor Baú Recomendado:</strong> ${best.name} |
                     <strong>EV Líquido:</strong> <span style="color: #4ade80;">+${best.netEV.toLocaleString('pt-BR')} G</span> |
                     <strong>Motivo:</strong> ${best.reason}
@@ -2032,7 +2032,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ? '<span class="badge" style="background: rgba(16,185,129,0.2); color:#4ade80;">Rentável</span>'
                     : '<span class="badge" style="background: rgba(239,68,68,0.2); color:#f87171;">Prejuízo</span>';
 
-                tr.innerHTML = `
+                tr.innerHTML = window.TTBH.safeHtml`
                     <td><strong>${item.name}</strong></td>
                     <td>${item.cost.toLocaleString('pt-BR')} G</td>
                     <td><strong style="color:#60a5fa;">+${item.ev.toLocaleString('pt-BR')} G</strong></td>
@@ -2092,7 +2092,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const res = chestOptimizer.simulateMonteCarlo('chest_stage_4309', 100);
                 if (monteCarloResultsBox && monteCarloSummaryText && monteCarloTbody) {
                     monteCarloResultsBox.classList.remove('hidden');
-                    monteCarloSummaryText.innerHTML = `
+                    monteCarloSummaryText.innerHTML = window.TTBH.safeHtml`
                         Simulação de 100 aberturas para <strong>${res.chestName}</strong>: Custo: <strong>${res.totalCost.toLocaleString('pt-BR')} G</strong> |
                         Retorno Bruto: <strong>${res.totalSimulatedGold.toLocaleString('pt-BR')} G</strong> |
                         Lucro Líquido: <strong style="color:${res.netGold >= 0 ? '#4ade80' : '#f87171'};">${res.netGold.toLocaleString('pt-BR')} G</strong>
@@ -2100,7 +2100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     monteCarloTbody.innerHTML = '';
                     Object.entries(res.distribution).forEach(([itemName, qty]) => {
                         const tr = document.createElement('tr');
-                        tr.innerHTML = `
+                        tr.innerHTML = window.TTBH.safeHtml`
                             <td><strong>${itemName}</strong></td>
                             <td>${qty}</td>
                             <td>${qty}%</td>
@@ -2253,7 +2253,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 6. Detalhes gerais
             if (eventDetailsEl) {
-                eventDetailsEl.innerHTML = `
+                eventDetailsEl.innerHTML = window.TTBH.safeHtml`
                     <div>💾 <strong>Eventos de Gravação de Save (ES3):</strong> ${data.saveWriteEvents} chamadas registradas</div>
                     <div>⏱️ <strong>Tempo Sugerido de Clear:</strong> ${telemetry.suggestClearTimeSec().toFixed(2)}s (baseado na mediana de CoolDown)</div>
                     ${data.waitQueue ? `<div>👥 <strong>SteamID da Fila:</strong> <code>${data.waitQueue.steamID}</code></div>` : ''}
@@ -2280,7 +2280,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     farmClearInput.dispatchEvent(new Event('input', { bubbles: true }));
                     btnApplyFarming.textContent = `✅ ${sec.toFixed(1)}s aplicado!`;
                     setTimeout(() => {
-                        btnApplyFarming.innerHTML = `<span>⚡</span> Aplicar tempo real no Farming`;
+                        btnApplyFarming.innerHTML = window.TTBH.safeHtml`<span>⚡</span> Aplicar tempo real no Farming`;
                     }, 2500);
                 }
             });
