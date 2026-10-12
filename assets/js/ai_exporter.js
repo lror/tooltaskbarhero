@@ -1,3 +1,6 @@
+window.TTBH_CONFIG = window.TTBH_CONFIG || {};
+window.TTBH_CONFIG.anonimizePII = true;
+
 import { parseStageLogs, getStageClearStats } from './save_parser.js';
 
 /**
@@ -496,4 +499,30 @@ ${h.equippedSkills.map(sk => `- ⚡ **${sk.name}** (ID: \`${sk.skillKey}\`, Dano
 
         return md;
     }
+}
+
+
+// [RSK-SEC-004] Sanitização de PII para exportação
+function sanitizePII(data) {
+    if (!window.TTBH_CONFIG || window.TTBH_CONFIG.anonimizePII === false) {
+        return data;
+    }
+    
+    const sanitized = JSON.parse(JSON.stringify(sanitizePII(data))); // Deep clone
+    
+    if (sanitized.ownerSteamId) sanitized.ownerSteamId = '[STEAM_ID_ANONIMIZADO]';
+    if (sanitized.username) sanitized.username = '[USUARIO_ANONIMIZADO]';
+    
+    // Percorrer arrays de heróis/itens se existirem
+    const keysToCheck = ['heroes', 'items', 'inventory', 'stash', 'characters'];
+    keysToCheck.forEach(key => {
+        if (Array.isArray(sanitized[key])) {
+            sanitized[key].forEach(item => {
+                if (item.ownerSteamId) item.ownerSteamId = '[STEAM_ID_ANONIMIZADO]';
+                if (item.username) item.username = '[USUARIO_ANONIMIZADO]';
+            });
+        }
+    });
+    
+    return sanitized;
 }

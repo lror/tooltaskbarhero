@@ -129,7 +129,13 @@
                         📈 Timeline de Backups
                     </button>
                     <button class="tab-btn" data-tab="ai">
-                        🤖 Exportar para IA-TBH
+                        🤖 
+                <label style="display: block; margin: 10px 0; font-size: 0.9em;">
+                    <input type="checkbox" id="chkAnonimizePII" checked>
+                    Anonimizar identificadores (SteamID/Username) no relatório
+                </label>
+
+                <button>Exportar para IA-TBH
                     </button>
                     <button class="tab-btn" data-tab="telemetry">
                         📡 Telemetria
@@ -1196,5 +1202,18 @@
 
     <!-- Módulos ES6 -->
     <script type="module" src="assets/js/app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chk = document.getElementById('chkAnonimizePII');
+    if (chk) {
+        chk.addEventListener('change', function() {
+            window.TTBH_CONFIG = window.TTBH_CONFIG || {};
+            window.TTBH_CONFIG.anonimizePII = this.checked;
+        });
+    }
+});
+</script>
+
 </body>
 </html>
