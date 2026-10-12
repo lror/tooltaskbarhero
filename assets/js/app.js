@@ -1683,7 +1683,7 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const file of files) {
                 try {
                     const ab = await file.arrayBuffer();
-                    const decrypted = await cryptoEngine.decryptES3(ab);
+                    const decrypted = await cryptoEngine.decryptBuffer(ab);
                     const parsed = saveParser.parse(decrypted);
                     backupTimeline.addSave({
                         name: file.name,
@@ -1980,7 +1980,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 importPricesInput.value = '';
                 // Recalcular Stash Value com modo market
                 if (window.__lastParsedSaveData) {
-                    renderStorage(window.__lastParsedSaveData);
+                    filterAndRenderStorage();
                 }
             });
         }
