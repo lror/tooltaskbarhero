@@ -1,0 +1,3226 @@
+{
+  "1": {
+    "id": 1,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1",
+    "next": "10 20",
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "10": {
+    "id": 10,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_10",
+    "next": "11 101 201",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "11": {
+    "id": 11,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_11",
+    "next": "12 11001 11002",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "12": {
+    "id": 12,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_12",
+    "next": 13,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "13": {
+    "id": 13,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_13",
+    "next": "14 13001 13002",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "14": {
+    "id": 14,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_14",
+    "next": 15,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "15": {
+    "id": 15,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_15",
+    "next": "16 15001 15002",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "16": {
+    "id": 16,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_16",
+    "next": "1801 1901 16001",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "20": {
+    "id": 20,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_20",
+    "next": "21 301 401",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "21": {
+    "id": 21,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_21",
+    "next": "22 25",
+    "name": {
+      "en-US": "Rune of Command",
+      "pt-BR": "Runa de Comando"
+    },
+    "icon": "/game/runes/UnlockArrangeSlotCount.png",
+    "statLabel": "Unlock Arrange Slot Count"
+  },
+  "22": {
+    "id": 22,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_22",
+    "next": 23,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "23": {
+    "id": 23,
+    "max": 5,
+    "prevReq": 1,
+    "ldk": "Rune_23",
+    "next": 24,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "24": {
+    "id": 24,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_24",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Command",
+      "pt-BR": "Runa de Comando"
+    },
+    "icon": "/game/runes/UnlockArrangeSlotCount.png",
+    "statLabel": "Unlock Arrange Slot Count"
+  },
+  "25": {
+    "id": 25,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_25",
+    "next": 26,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "26": {
+    "id": 26,
+    "max": 3,
+    "prevReq": 1,
+    "ldk": "Rune_26",
+    "next": 27,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "27": {
+    "id": 27,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_27",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Awakening",
+      "pt-BR": "Runa do Despertar"
+    },
+    "icon": "/game/runes/UnlockSkillSlotCount.png",
+    "statLabel": "Unlock Skill Slot Count"
+  },
+  "101": {
+    "id": 101,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_101",
+    "next": 102,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "102": {
+    "id": 102,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_102",
+    "next": "103 1021",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "103": {
+    "id": 103,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_103",
+    "next": "104 1031",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "104": {
+    "id": 104,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_104",
+    "next": 105,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "105": {
+    "id": 105,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_105",
+    "next": "106 1051",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "106": {
+    "id": 106,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_106",
+    "next": "107 1061",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "107": {
+    "id": 107,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_107",
+    "next": "108 1071 1072",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "108": {
+    "id": 108,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_108",
+    "next": 109,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "109": {
+    "id": 109,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_109",
+    "next": "110 1091",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "110": {
+    "id": 110,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_110",
+    "next": "111 1101 1102",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "111": {
+    "id": 111,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_111",
+    "next": "112 1111",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "112": {
+    "id": 112,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_112",
+    "next": "113 1121",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "113": {
+    "id": 113,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_113",
+    "next": "114 1131 1132",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "114": {
+    "id": 114,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_114",
+    "next": "115 1141 1142",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "115": {
+    "id": 115,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_115",
+    "next": 116,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "116": {
+    "id": 116,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_116",
+    "next": "117 1161",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "117": {
+    "id": 117,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_117",
+    "next": "118 1171 1172",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "118": {
+    "id": 118,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_118",
+    "next": "119 1181 1182",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "119": {
+    "id": 119,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_119",
+    "next": "120 1191",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "120": {
+    "id": 120,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_120",
+    "next": "121 1201 1202 1203",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "121": {
+    "id": 121,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_121",
+    "next": 122,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "122": {
+    "id": 122,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_122",
+    "next": "123 1221 1222",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "123": {
+    "id": 123,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_123",
+    "next": 124,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "124": {
+    "id": 124,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_124",
+    "next": "125 1241",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "125": {
+    "id": 125,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_125",
+    "next": "126 1251 1252",
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "126": {
+    "id": 126,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_126",
+    "next": "127 1261 1262",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "127": {
+    "id": 127,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_127",
+    "next": 128,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "128": {
+    "id": 128,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_128",
+    "next": "1281 1282",
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "129": {
+    "id": 129,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_129",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "130": {
+    "id": 130,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_130",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "131": {
+    "id": 131,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_131",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "132": {
+    "id": 132,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_132",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChanceStageBossChest.png",
+    "statLabel": "Drop Chance Stage Boss Chest"
+  },
+  "201": {
+    "id": 201,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_201",
+    "next": 202,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGold.png",
+    "statLabel": "Additional Gold"
+  },
+  "202": {
+    "id": 202,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_202",
+    "next": 203,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "203": {
+    "id": 203,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_203",
+    "next": "204 2031",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "204": {
+    "id": 204,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_204",
+    "next": 205,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldNormalMonster.png",
+    "statLabel": "Additional Gold Normal Monster"
+  },
+  "205": {
+    "id": 205,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_205",
+    "next": 206,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldActBoss.png",
+    "statLabel": "Additional Gold Act Boss"
+  },
+  "206": {
+    "id": 206,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_206",
+    "next": 207,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "207": {
+    "id": 207,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_207",
+    "next": "208 2071",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "208": {
+    "id": 208,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_208",
+    "next": 209,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "209": {
+    "id": 209,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_209",
+    "next": "210 2091",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "210": {
+    "id": 210,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_210",
+    "next": 211,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "211": {
+    "id": 211,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_211",
+    "next": "212 2111",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "212": {
+    "id": 212,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_212",
+    "next": 213,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "213": {
+    "id": 213,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_213",
+    "next": "214 2131 2132",
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "214": {
+    "id": 214,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_214",
+    "next": 215,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/IncreaseGoldAmount.png",
+    "statLabel": "Increase Gold Amount"
+  },
+  "215": {
+    "id": 215,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_215",
+    "next": 2151,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldStageBoss.png",
+    "statLabel": "Additional Gold Stage Boss"
+  },
+  "301": {
+    "id": 301,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_301",
+    "next": 302,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExp.png",
+    "statLabel": "Additional Exp"
+  },
+  "302": {
+    "id": 302,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_302",
+    "next": "303 3031",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "303": {
+    "id": 303,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_303",
+    "next": 304,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "304": {
+    "id": 304,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_304",
+    "next": 305,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpNormalMonster.png",
+    "statLabel": "Additional Exp Normal Monster"
+  },
+  "305": {
+    "id": 305,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_305",
+    "next": 306,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpActBoss.png",
+    "statLabel": "Additional Exp Act Boss"
+  },
+  "306": {
+    "id": 306,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_306",
+    "next": "307 3061",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "307": {
+    "id": 307,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_307",
+    "next": 308,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "308": {
+    "id": 308,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_308",
+    "next": 309,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "309": {
+    "id": 309,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_309",
+    "next": "310 3091",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "310": {
+    "id": 310,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_310",
+    "next": 311,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "311": {
+    "id": 311,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_311",
+    "next": 312,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "312": {
+    "id": 312,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_312",
+    "next": "313 3121",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "313": {
+    "id": 313,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_313",
+    "next": 314,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "314": {
+    "id": 314,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_314",
+    "next": 315,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/IncreaseExpAmount.png",
+    "statLabel": "Increase Exp Amount"
+  },
+  "315": {
+    "id": 315,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_315",
+    "next": "3151 3152",
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpStageBoss.png",
+    "statLabel": "Additional Exp Stage Boss"
+  },
+  "401": {
+    "id": 401,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_401",
+    "next": 402,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmor.png",
+    "statLabel": "All Hero Armor"
+  },
+  "402": {
+    "id": 402,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_402",
+    "next": 403,
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Tempestade"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "403": {
+    "id": 403,
+    "max": 10,
+    "prevReq": null,
+    "ldk": "Rune_403",
+    "next": "404 4031",
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmor.png",
+    "statLabel": "All Hero Armor"
+  },
+  "404": {
+    "id": 404,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_404",
+    "next": 405,
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Tempestade"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "405": {
+    "id": 405,
+    "max": 10,
+    "prevReq": null,
+    "ldk": "Rune_405",
+    "next": 406,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamagePercent.png",
+    "statLabel": "All Hero Attack Damage Percent"
+  },
+  "406": {
+    "id": 406,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_406",
+    "next": "407 4061",
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Tempestade"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "407": {
+    "id": 407,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_407",
+    "next": 408,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmorPercent.png",
+    "statLabel": "All Hero Armor Percent"
+  },
+  "408": {
+    "id": 408,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_408",
+    "next": "409 4081",
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamagePercent.png",
+    "statLabel": "All Hero Attack Damage Percent"
+  },
+  "409": {
+    "id": 409,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_409",
+    "next": 410,
+    "name": {
+      "en-US": "Rune of Frenzy",
+      "pt-BR": "Runa do Frenesi"
+    },
+    "icon": "/game/runes/AllHeroAttackSpeed.png",
+    "statLabel": "All Hero Attack Speed"
+  },
+  "410": {
+    "id": 410,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_410",
+    "next": "411 4101",
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmor.png",
+    "statLabel": "All Hero Armor"
+  },
+  "411": {
+    "id": 411,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_411",
+    "next": 412,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "412": {
+    "id": 412,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_412",
+    "next": 413,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmorPercent.png",
+    "statLabel": "All Hero Armor Percent"
+  },
+  "413": {
+    "id": 413,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_413",
+    "next": 414,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamagePercent.png",
+    "statLabel": "All Hero Attack Damage Percent"
+  },
+  "414": {
+    "id": 414,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_414",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Frenzy",
+      "pt-BR": "Runa do Frenesi"
+    },
+    "icon": "/game/runes/AllHeroAttackSpeed.png",
+    "statLabel": "All Hero Attack Speed"
+  },
+  "415": {
+    "id": 415,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_415",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmor.png",
+    "statLabel": "All Hero Armor"
+  },
+  "416": {
+    "id": 416,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_416",
+    "next": null,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa da Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "417": {
+    "id": 417,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_417",
+    "next": null,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa da Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamagePercent.png",
+    "statLabel": "All Hero Attack Damage Percent"
+  },
+  "418": {
+    "id": 418,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_418",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Frenzy",
+      "pt-BR": "Runa do Frenesi"
+    },
+    "icon": "/game/runes/AllHeroAttackSpeed.png",
+    "statLabel": "All Hero Attack Speed"
+  },
+  "419": {
+    "id": 419,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_419",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmor.png",
+    "statLabel": "All Hero Armor"
+  },
+  "420": {
+    "id": 420,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_420",
+    "next": null,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa da Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "421": {
+    "id": 421,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_421",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Shield",
+      "pt-BR": "Runa do Escudo"
+    },
+    "icon": "/game/runes/AllHeroArmorPercent.png",
+    "statLabel": "All Hero Armor Percent"
+  },
+  "422": {
+    "id": 422,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_422",
+    "next": null,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa da Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "1021": {
+    "id": 1021,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1021",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Opening",
+      "pt-BR": "Runa de Abertura"
+    },
+    "icon": "/game/runes/OpenOneTypeChestAllAtOnce.png",
+    "statLabel": "Open One Type Chest All At Once"
+  },
+  "1031": {
+    "id": 1031,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_1031",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1051": {
+    "id": 1051,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_1051",
+    "next": "1052 1053 1055 1056",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1052": {
+    "id": 1052,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1052",
+    "next": 1054,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1053": {
+    "id": 1053,
+    "max": 3,
+    "prevReq": 5,
+    "ldk": "Rune_1053",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa de Exploração"
+    },
+    "icon": "/game/runes/DropChanceNormalChest.png",
+    "statLabel": "Drop Chance Normal Chest"
+  },
+  "1054": {
+    "id": 1054,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_1054",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1055": {
+    "id": 1055,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1055",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Opening",
+      "pt-BR": "Runa de Abertura"
+    },
+    "icon": "/game/runes/OpenAllTypeChestAllAtOnce.png",
+    "statLabel": "Open All Type Chest All At Once"
+  },
+  "1056": {
+    "id": 1056,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1056",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1061": {
+    "id": 1061,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1061",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1071": {
+    "id": 1071,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_1071",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1072": {
+    "id": 1072,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1072",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1091": {
+    "id": 1091,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1091",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1101": {
+    "id": 1101,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1101",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1102": {
+    "id": 1102,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1102",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1111": {
+    "id": 1111,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1111",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1121": {
+    "id": 1121,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1121",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1131": {
+    "id": 1131,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1131",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1132": {
+    "id": 1132,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1132",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1133": {
+    "id": 1133,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1133",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1141": {
+    "id": 1141,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1141",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1142": {
+    "id": 1142,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1142",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1161": {
+    "id": 1161,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1161",
+    "next": 11611,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1162": {
+    "id": 1162,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1162",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Containment",
+      "pt-BR": "Runa de Contenção da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueNormalChest.png",
+    "statLabel": "Max Amount Plague Normal Chest"
+  },
+  "1163": {
+    "id": 1163,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1163",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo da Peste"
+    },
+    "icon": "/game/runes/UnlockAutoOpenPlagueNormalChest.png",
+    "statLabel": "Unlock Auto Open Plague Normal Chest"
+  },
+  "1164": {
+    "id": 1164,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1164",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Vault",
+      "pt-BR": "Runa do Cofre da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueStageBossChest.png",
+    "statLabel": "Max Amount Plague Stage Boss Chest"
+  },
+  "1165": {
+    "id": 1165,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1165",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo da Peste"
+    },
+    "icon": "/game/runes/UnlockAutoOpenPlagueStageBossChest.png",
+    "statLabel": "Unlock Auto Open Plague Stage Boss Chest"
+  },
+  "1166": {
+    "id": 1166,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1166",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Infinity",
+      "pt-BR": "Runa do Infinito da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueActBossChest.png",
+    "statLabel": "Max Amount Plague Act Boss Chest"
+  },
+  "1167": {
+    "id": 1167,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1167",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo da Peste"
+    },
+    "icon": "/game/runes/UnlockAutoOpenPlagueActBossChest.png",
+    "statLabel": "Unlock Auto Open Plague Act Boss Chest"
+  },
+  "1171": {
+    "id": 1171,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1171",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Brevity",
+      "pt-BR": "Runa de Brevidade"
+    },
+    "icon": "/game/runes/WaveCountReduction.png",
+    "statLabel": "Wave Count Reduction"
+  },
+  "1172": {
+    "id": 1172,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1172",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1181": {
+    "id": 1181,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1181",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1182": {
+    "id": 1182,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1182",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1191": {
+    "id": 1191,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1191",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1201": {
+    "id": 1201,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1201",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1202": {
+    "id": 1202,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1202",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1203": {
+    "id": 1203,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1203",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1211": {
+    "id": 1211,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1211",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChancePlagueNormalChest.png",
+    "statLabel": "Drop Chance Plague Normal Chest"
+  },
+  "1221": {
+    "id": 1221,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1221",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1222": {
+    "id": 1222,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1222",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1241": {
+    "id": 1241,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1241",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "1242": {
+    "id": 1242,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1242",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Brevity",
+      "pt-BR": "Runa da Brevidade"
+    },
+    "icon": "/game/runes/WaveCountReduction.png",
+    "statLabel": "Wave Count Reduction"
+  },
+  "1251": {
+    "id": 1251,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1251",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1252": {
+    "id": 1252,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1252",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1261": {
+    "id": 1261,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1261",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1262": {
+    "id": 1262,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1262",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1271": {
+    "id": 1271,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1271",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChancePlagueNormalChest.png",
+    "statLabel": "Drop Chance Plague Normal Chest"
+  },
+  "1281": {
+    "id": 1281,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1281",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "1282": {
+    "id": 1282,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1282",
+    "next": 12821,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "1301": {
+    "id": 1301,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1301",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Brevity",
+      "pt-BR": "Runa da Brevidade"
+    },
+    "icon": "/game/runes/WaveCountReduction.png",
+    "statLabel": "Wave Count Reduction"
+  },
+  "1302": {
+    "id": 1302,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1302",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChancePlagueStageBossChest.png",
+    "statLabel": "Drop Chance Plague Stage Boss Chest"
+  },
+  "1311": {
+    "id": 1311,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1311",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChancePlagueNormalChest.png",
+    "statLabel": "Drop Chance Plague Normal Chest"
+  },
+  "1322": {
+    "id": 1322,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1322",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChancePlagueStageBossChest.png",
+    "statLabel": "Drop Chance Plague Stage Boss Chest"
+  },
+  "1801": {
+    "id": 1801,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1801",
+    "next": 1802,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1802": {
+    "id": 1802,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1802",
+    "next": "1803 180201",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1803": {
+    "id": 1803,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1803",
+    "next": "1804 180301",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1804": {
+    "id": 1804,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1804",
+    "next": "1805 180401",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1805": {
+    "id": 1805,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1805",
+    "next": "1806 180501",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1806": {
+    "id": 1806,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1806",
+    "next": "1807 180601",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1807": {
+    "id": 1807,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1807",
+    "next": "1808 180701",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1808": {
+    "id": 1808,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1808",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1901": {
+    "id": 1901,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1901",
+    "next": 1902,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1902": {
+    "id": 1902,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1902",
+    "next": "1903 1902001",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1903": {
+    "id": 1903,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1903",
+    "next": "1904 190301 190302",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1904": {
+    "id": 1904,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1904",
+    "next": "1905 190401",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1905": {
+    "id": 1905,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1905",
+    "next": "1906 190501 190502",
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1906": {
+    "id": 1906,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1906",
+    "next": 1907,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1907": {
+    "id": 1907,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1907",
+    "next": 1908,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "1908": {
+    "id": 1908,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_1908",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Expansion",
+      "pt-BR": "Runa de Expansão"
+    },
+    "icon": "/game/runes/MaxInventorySlot.png",
+    "statLabel": "Max Inventory Slot"
+  },
+  "2031": {
+    "id": 2031,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_2031",
+    "next": 2032,
+    "name": {
+      "en-US": "Rune of Alchemy",
+      "pt-BR": "Runa de Alquimia"
+    },
+    "icon": "/game/runes/CubeAlchemyGoldPercent.png",
+    "statLabel": "Cube Alchemy Gold Percent"
+  },
+  "2032": {
+    "id": 2032,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_2032",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Forging",
+      "pt-BR": "Runa de Combinação"
+    },
+    "icon": "/game/runes/CubeExpPercent.png",
+    "statLabel": "Cube Exp Percent"
+  },
+  "2071": {
+    "id": 2071,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_2071",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldNormalMonster.png",
+    "statLabel": "Additional Gold Normal Monster"
+  },
+  "2091": {
+    "id": 2091,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_2091",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldActBoss.png",
+    "statLabel": "Additional Gold Act Boss"
+  },
+  "2111": {
+    "id": 2111,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_2111",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGold.png",
+    "statLabel": "Additional Gold"
+  },
+  "2131": {
+    "id": 2131,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_2131",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Alchemy",
+      "pt-BR": "Runa de Alquimia"
+    },
+    "icon": "/game/runes/CubeAlchemyGoldPercent.png",
+    "statLabel": "Cube Alchemy Gold Percent"
+  },
+  "2132": {
+    "id": 2132,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_2132",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Forging",
+      "pt-BR": "Runa de Combinação"
+    },
+    "icon": "/game/runes/CubeExpPercent.png",
+    "statLabel": "Cube Exp Percent"
+  },
+  "2151": {
+    "id": 2151,
+    "max": 2,
+    "prevReq": null,
+    "ldk": "Rune_2151",
+    "next": 2152,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldNormalMonster.png",
+    "statLabel": "Additional Gold Normal Monster"
+  },
+  "2152": {
+    "id": 2152,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_2152",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Wealth",
+      "pt-BR": "Runa da Riqueza"
+    },
+    "icon": "/game/runes/AdditionalGoldActBoss.png",
+    "statLabel": "Additional Gold Act Boss"
+  },
+  "3031": {
+    "id": 3031,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_3031",
+    "next": 3032,
+    "name": {
+      "en-US": "Rune of Forging",
+      "pt-BR": "Runa de Combinação"
+    },
+    "icon": "/game/runes/CubeExpPercent.png",
+    "statLabel": "Cube Exp Percent"
+  },
+  "3032": {
+    "id": 3032,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3032",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Alchemy",
+      "pt-BR": "Runa de Alquimia"
+    },
+    "icon": "/game/runes/CubeAlchemyGoldPercent.png",
+    "statLabel": "Cube Alchemy Gold Percent"
+  },
+  "3061": {
+    "id": 3061,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3061",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpActBoss.png",
+    "statLabel": "Additional Exp Act Boss"
+  },
+  "3091": {
+    "id": 3091,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_3091",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpNormalMonster.png",
+    "statLabel": "Additional Exp Normal Monster"
+  },
+  "3121": {
+    "id": 3121,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3121",
+    "next": 3122,
+    "name": {
+      "en-US": "Rune of Forging",
+      "pt-BR": "Runa de Combinação"
+    },
+    "icon": "/game/runes/CubeExpPercent.png",
+    "statLabel": "Cube Exp Percent"
+  },
+  "3122": {
+    "id": 3122,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3122",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Alchemy",
+      "pt-BR": "Runa de Alquimia"
+    },
+    "icon": "/game/runes/CubeAlchemyGoldPercent.png",
+    "statLabel": "Cube Alchemy Gold Percent"
+  },
+  "3151": {
+    "id": 3151,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3151",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExp.png",
+    "statLabel": "Additional Exp"
+  },
+  "3152": {
+    "id": 3152,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_3152",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Growth",
+      "pt-BR": "Runa do Crescimento"
+    },
+    "icon": "/game/runes/AdditionalExpActBoss.png",
+    "statLabel": "Additional Exp Act Boss"
+  },
+  "4031": {
+    "id": 4031,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_4031",
+    "next": null,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "4061": {
+    "id": 4061,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_4061",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Frenzy",
+      "pt-BR": "Runa do Frenesi"
+    },
+    "icon": "/game/runes/AllHeroAttackSpeed.png",
+    "statLabel": "All Hero Attack Speed"
+  },
+  "4081": {
+    "id": 4081,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_4081",
+    "next": 4082,
+    "name": {
+      "en-US": "Rune of War",
+      "pt-BR": "Runa de Guerra"
+    },
+    "icon": "/game/runes/AllHeroAttackDamage.png",
+    "statLabel": "All Hero Attack Damage"
+  },
+  "4082": {
+    "id": 4082,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_4082",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Tempestade"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "4101": {
+    "id": 4101,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_4101",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Tempestade"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "4171": {
+    "id": 4171,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_4171",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Forging",
+      "pt-BR": "Runa da Forja"
+    },
+    "icon": "/game/runes/CubeExpPercent.png",
+    "statLabel": "Cube Exp Percent"
+  },
+  "4172": {
+    "id": 4172,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_4172",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Alchemy",
+      "pt-BR": "Runa da Alquimia"
+    },
+    "icon": "/game/runes/CubeAlchemyGoldPercent.png",
+    "statLabel": "Cube Alchemy Gold Percent"
+  },
+  "4211": {
+    "id": 4211,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_4211",
+    "next": null,
+    "name": {
+      "en-US": "Rune of the Gale",
+      "pt-BR": "Runa da Ventania"
+    },
+    "icon": "/game/runes/AllHeroMoveSpeed.png",
+    "statLabel": "All Hero Move Speed"
+  },
+  "11001": {
+    "id": 11001,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_11001",
+    "next": "110011 110012",
+    "name": {
+      "en-US": "Rune of Repose",
+      "pt-BR": "Runa do Repouso"
+    },
+    "icon": "/game/runes/UnlockOfflineReward.png",
+    "statLabel": "Unlock Offline Reward"
+  },
+  "11002": {
+    "id": 11002,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_11002",
+    "next": 11003,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "11003": {
+    "id": 11003,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11003",
+    "next": 11004,
+    "name": {
+      "en-US": "Rune of the Vault",
+      "pt-BR": "Runa do Cofre"
+    },
+    "icon": "/game/runes/MaxAmountStageBossChest.png",
+    "statLabel": "Max Amount Stage Boss Chest"
+  },
+  "11004": {
+    "id": 11004,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11004",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "11611": {
+    "id": 11611,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11611",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Containment",
+      "pt-BR": "Runa de Contenção"
+    },
+    "icon": "/game/runes/MaxAmountNormalChest.png",
+    "statLabel": "Max Amount Normal Chest"
+  },
+  "11621": {
+    "id": 11621,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11621",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Containment",
+      "pt-BR": "Runa de Contenção da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueNormalChest.png",
+    "statLabel": "Max Amount Plague Normal Chest"
+  },
+  "11622": {
+    "id": 11622,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11622",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Containment",
+      "pt-BR": "Runa de Contenção da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueNormalChest.png",
+    "statLabel": "Max Amount Plague Normal Chest"
+  },
+  "11623": {
+    "id": 11623,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11623",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Containment",
+      "pt-BR": "Runa de Contenção da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueNormalChest.png",
+    "statLabel": "Max Amount Plague Normal Chest"
+  },
+  "11624": {
+    "id": 11624,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11624",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Containment",
+      "pt-BR": "Runa de Contenção da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueNormalChest.png",
+    "statLabel": "Max Amount Plague Normal Chest"
+  },
+  "11629": {
+    "id": 11629,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11629",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Exploration",
+      "pt-BR": "Runa da Exploração"
+    },
+    "icon": "/game/runes/DropChancePlagueNormalChest.png",
+    "statLabel": "Drop Chance Plague Normal Chest"
+  },
+  "11631": {
+    "id": 11631,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11631",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Normal Chest Time"
+  },
+  "11632": {
+    "id": 11632,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11632",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Normal Chest Time"
+  },
+  "11633": {
+    "id": 11633,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11633",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Normal Chest Time"
+  },
+  "11641": {
+    "id": 11641,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11641",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Vault",
+      "pt-BR": "Runa do Cofre da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueStageBossChest.png",
+    "statLabel": "Max Amount Plague Stage Boss Chest"
+  },
+  "11642": {
+    "id": 11642,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11642",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Vault",
+      "pt-BR": "Runa do Cofre da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueStageBossChest.png",
+    "statLabel": "Max Amount Plague Stage Boss Chest"
+  },
+  "11643": {
+    "id": 11643,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11643",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Vault",
+      "pt-BR": "Runa do Cofre da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueStageBossChest.png",
+    "statLabel": "Max Amount Plague Stage Boss Chest"
+  },
+  "11644": {
+    "id": 11644,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11644",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of the Vault",
+      "pt-BR": "Runa do Cofre da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueStageBossChest.png",
+    "statLabel": "Max Amount Plague Stage Boss Chest"
+  },
+  "11649": {
+    "id": 11649,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11649",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Conquest",
+      "pt-BR": "Runa da Conquista"
+    },
+    "icon": "/game/runes/DropChancePlagueStageBossChest.png",
+    "statLabel": "Drop Chance Plague Stage Boss Chest"
+  },
+  "11651": {
+    "id": 11651,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11651",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Stage Boss Chest Time"
+  },
+  "11652": {
+    "id": 11652,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11652",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Stage Boss Chest Time"
+  },
+  "11653": {
+    "id": 11653,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11653",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Stage Boss Chest Time"
+  },
+  "11661": {
+    "id": 11661,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11661",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Infinity",
+      "pt-BR": "Runa do Infinito da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueActBossChest.png",
+    "statLabel": "Max Amount Plague Act Boss Chest"
+  },
+  "11662": {
+    "id": 11662,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11662",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Infinity",
+      "pt-BR": "Runa do Infinito da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueActBossChest.png",
+    "statLabel": "Max Amount Plague Act Boss Chest"
+  },
+  "11663": {
+    "id": 11663,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11663",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Infinity",
+      "pt-BR": "Runa do Infinito da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueActBossChest.png",
+    "statLabel": "Max Amount Plague Act Boss Chest"
+  },
+  "11664": {
+    "id": 11664,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11664",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Infinity",
+      "pt-BR": "Runa do Infinito da Peste"
+    },
+    "icon": "/game/runes/MaxAmountPlagueActBossChest.png",
+    "statLabel": "Max Amount Plague Act Boss Chest"
+  },
+  "11671": {
+    "id": 11671,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11671",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueActBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Act Boss Chest Time"
+  },
+  "11672": {
+    "id": 11672,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11672",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueActBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Act Boss Chest Time"
+  },
+  "11673": {
+    "id": 11673,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_11673",
+    "next": null,
+    "name": {
+      "en-US": "Plague Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação da Peste"
+    },
+    "icon": "/game/runes/ReduceAutoOpenPlagueActBossChestTime.png",
+    "statLabel": "Reduce Auto Open Plague Act Boss Chest Time"
+  },
+  "12821": {
+    "id": 12821,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_12821",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Infinity",
+      "pt-BR": "Runa do Infinito"
+    },
+    "icon": "/game/runes/MaxAmountActBossChest.png",
+    "statLabel": "Max Amount Act Boss Chest"
+  },
+  "13001": {
+    "id": 13001,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_13001",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Storage",
+      "pt-BR": "Runa de Armazenamento"
+    },
+    "icon": "/game/runes/UnlockStashPageCount.png",
+    "statLabel": "Unlock Stash Page Count"
+  },
+  "13002": {
+    "id": 13002,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_13002",
+    "next": 130021,
+    "name": {
+      "en-US": "Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo"
+    },
+    "icon": "/game/runes/UnlockAutoOpenNormalChest.png",
+    "statLabel": "Unlock Auto Open Normal Chest"
+  },
+  "15001": {
+    "id": 15001,
+    "max": 1,
+    "prevReq": 1,
+    "ldk": "Rune_15001",
+    "next": 150011,
+    "name": {
+      "en-US": "Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo"
+    },
+    "icon": "/game/runes/UnlockAutoOpenStageBossChest.png",
+    "statLabel": "Unlock Auto Open Stage Boss Chest"
+  },
+  "15002": {
+    "id": 15002,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_15002",
+    "next": 150021,
+    "name": {
+      "en-US": "Rune of Hoarding",
+      "pt-BR": "Runa do Acúmulo"
+    },
+    "icon": "/game/runes/OfflineRewardGoldPercent.png",
+    "statLabel": "Offline Reward Gold Percent"
+  },
+  "16001": {
+    "id": 16001,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_16001",
+    "next": 160011,
+    "name": {
+      "en-US": "Rune of Storage",
+      "pt-BR": "Runa de Armazenamento"
+    },
+    "icon": "/game/runes/UnlockStashPageCount.png",
+    "statLabel": "Unlock Stash Page Count"
+  },
+  "110011": {
+    "id": 110011,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_110011",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Hoarding",
+      "pt-BR": "Runa do Acúmulo"
+    },
+    "icon": "/game/runes/OfflineRewardGoldPercent.png",
+    "statLabel": "Offline Reward Gold Percent"
+  },
+  "110012": {
+    "id": 110012,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_110012",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Training",
+      "pt-BR": "Runa de Treinamento"
+    },
+    "icon": "/game/runes/OfflineRewardExpPercent.png",
+    "statLabel": "Offline Reward Exp Percent"
+  },
+  "130021": {
+    "id": 130021,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_130021",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Normal Chest Time"
+  },
+  "150011": {
+    "id": 150011,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_150011",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Stage Boss Chest Time"
+  },
+  "150021": {
+    "id": 150021,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_150021",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Training",
+      "pt-BR": "Runa de Treinamento"
+    },
+    "icon": "/game/runes/OfflineRewardExpPercent.png",
+    "statLabel": "Offline Reward Exp Percent"
+  },
+  "160011": {
+    "id": 160011,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_160011",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Storage",
+      "pt-BR": "Runa de Armazenamento"
+    },
+    "icon": "/game/runes/UnlockStashPageCount.png",
+    "statLabel": "Unlock Stash Page Count"
+  },
+  "180201": {
+    "id": 180201,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180201",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Hoarding",
+      "pt-BR": "Runa do Acúmulo"
+    },
+    "icon": "/game/runes/OfflineRewardGoldPercent.png",
+    "statLabel": "Offline Reward Gold Percent"
+  },
+  "180301": {
+    "id": 180301,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180301",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Training",
+      "pt-BR": "Runa de Treinamento"
+    },
+    "icon": "/game/runes/OfflineRewardExpPercent.png",
+    "statLabel": "Offline Reward Exp Percent"
+  },
+  "180401": {
+    "id": 180401,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180401",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Hoarding",
+      "pt-BR": "Runa do Acúmulo"
+    },
+    "icon": "/game/runes/OfflineRewardGoldPercent.png",
+    "statLabel": "Offline Reward Gold Percent"
+  },
+  "180501": {
+    "id": 180501,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180501",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Training",
+      "pt-BR": "Runa de Treinamento"
+    },
+    "icon": "/game/runes/OfflineRewardExpPercent.png",
+    "statLabel": "Offline Reward Exp Percent"
+  },
+  "180601": {
+    "id": 180601,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180601",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Hoarding",
+      "pt-BR": "Runa do Acúmulo"
+    },
+    "icon": "/game/runes/OfflineRewardGoldPercent.png",
+    "statLabel": "Offline Reward Gold Percent"
+  },
+  "180701": {
+    "id": 180701,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_180701",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Training",
+      "pt-BR": "Runa de Treinamento"
+    },
+    "icon": "/game/runes/OfflineRewardExpPercent.png",
+    "statLabel": "Offline Reward Exp Percent"
+  },
+  "190301": {
+    "id": 190301,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_190301",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Normal Chest Time"
+  },
+  "190302": {
+    "id": 190302,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_190302",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Stage Boss Chest Time"
+  },
+  "190401": {
+    "id": 190401,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_190401",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenActBossChestTime.png",
+    "statLabel": "Reduce Auto Open Act Boss Chest Time"
+  },
+  "190501": {
+    "id": 190501,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_190501",
+    "next": 1905011,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Normal Chest Time"
+  },
+  "190502": {
+    "id": 190502,
+    "max": 5,
+    "prevReq": null,
+    "ldk": "Rune_190502",
+    "next": 1905021,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Stage Boss Chest Time"
+  },
+  "1902001": {
+    "id": 1902001,
+    "max": 1,
+    "prevReq": null,
+    "ldk": "Rune_1902001",
+    "next": 19020011,
+    "name": {
+      "en-US": "Rune of the Mainspring",
+      "pt-BR": "Runa do Mecanismo"
+    },
+    "icon": "/game/runes/UnlockAutoOpenActBossChest.png",
+    "statLabel": "Unlock Auto Open Act Boss Chest"
+  },
+  "1905011": {
+    "id": 1905011,
+    "max": 5,
+    "prevReq": 5,
+    "ldk": "Rune_1905011",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenNormalChestTime.png",
+    "statLabel": "Reduce Auto Open Normal Chest Time"
+  },
+  "1905021": {
+    "id": 1905021,
+    "max": 5,
+    "prevReq": 5,
+    "ldk": "Rune_1905021",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenStageBossChestTime.png",
+    "statLabel": "Reduce Auto Open Stage Boss Chest Time"
+  },
+  "19020011": {
+    "id": 19020011,
+    "max": 3,
+    "prevReq": null,
+    "ldk": "Rune_19020011",
+    "next": null,
+    "name": {
+      "en-US": "Rune of Lubrication",
+      "pt-BR": "Runa de Lubrificação"
+    },
+    "icon": "/game/runes/ReduceAutoOpenActBossChestTime.png",
+    "statLabel": "Reduce Auto Open Act Boss Chest Time"
+  }
+}

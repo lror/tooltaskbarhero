@@ -1,0 +1,104 @@
+Para descriptografar esse arquivo `.es3`, precisamos entender como o plugin **Easy Save 3 (ES3)** do Unity funciona.
+
+O arquivo que você enviou está, de fato, criptografado. O ES3 utiliza criptografia **AES (Advanced Encryption Standard)**.
+
+A má notícia é que **é matematicamente impossível descriptografar o arquivo apenas olhando para os bytes dele**. Nós precisamos da **Senha (Encryption Password)**. O Unity não usa o seu SteamID ou Username nativamente para o ES3 (os dados que citei anteriormente foram um cenário simulado para a interface). A senha real é definida pelo desenvolvedor do jogo dentro da própria Engine do Unity e fica "escondida" no código do jogo.
+
+Aqui está o **passo a passo real** de como a engenharia reversa de saves de Unity é feita para descobrir essa chave e abrir o arquivo:
+
+### Passo 1: Localizar o Código do Jogo
+
+Você precisará inspecionar os arquivos da pasta de instalação do jogo.
+
+1. Vá até a pasta do jogo na Steam (botão direito no jogo > Gerenciar > Explorar arquivos locais).
+2. Procure pela pasta `[NomeDoJogo]_Data`.
+3. Dentro dela, procure pela pasta `Managed`.
+
+* **Se a pasta `Managed` existir:** O jogo foi compilado em "Mono". O código principal estará no arquivo `Assembly-CSharp.dll`. Isso é ótimo e muito fácil de ler.
+* **Se a pasta `Managed` NÃO existir (tiver uma pasta `il2cpp_data`):** O jogo usa IL2CPP (C++ compilado). É um pouco mais difícil, e você precisará de uma ferramenta chamada **Il2CppDumper** para extrair as bibliotecas DLLs de um arquivo chamado `GameAssembly.dll`.
+
+### Passo 2: Extrair a Senha (Engenharia Reversa)
+
+Assumindo que você conseguiu o arquivo `Assembly-CSharp.dll` (seja direto da pasta `Managed` ou gerado pelo Il2CppDumper):
+
+1. Baixe um descompilador de código C# gratuito, como o **dnSpy** ou o **ILSpy** (recomendo o dnSpy).
+2. Arraste o arquivo `Assembly-CSharp.dll` para dentro do dnSpy.
+3. Use a ferramenta de busca (Lupa) e procure pelos seguintes termos exatos:
+
+* `encryptionPassword`
+* `ES3Settings`
+
+1. Você encontrará a classe de configurações do Easy Save 3. Em algum lugar ali, o desenvolvedor digitou a senha, por exemplo: `public string encryptionPassword = "MinhaSenhaSuperSecreta123";`
+2. **Anote essa senha.**
+
+*(Nota: Alguns desenvolvedores deixam a senha padrão, que costuma ser `DefaultPassword`. Você pode tentar essa antes de tudo).*
+
+### Passo 3: Criar um Descriptografador
+
+Assim que você tiver a senha do jogo, você pode usar um script para aplicar a descriptografia AES e transformar aquele amontoado de símbolos estranhos de volta em um JSON legível.
+
+Como o Easy Save 3 usa lógicas muito específicas do C# (como `RijndaelManaged` com preenchimento `PKCS7`), a melhor forma de descriptografar é usando o próprio C#. Vou gerar abaixo um código em C# que você pode rodar (usando o Visual Studio ou ferramentas online como .NET Fiddle) para descriptografar o seu save assim que você tiver a senha.
+
+```csharp:ES3Decryptor.cs
+using System;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+
+public class ES3Decryptor
+{
+    // A senha padrão do Easy Save 3, mas o dev pode ter mudado no Assembly-CSharp.dll
+    private static string password = "DefaultPassword"; // SUBSTITUA PELA SENHA ENCONTRADA NO DNSPY
+
+    public static void Main()
+    {
+        // Caminho para o seu arquivo de save criptografado
+        string filePath = "SaveFile_Live.es3";
+        
+        try
+        {
+            byte[] fileBytes = File.ReadAllBytes(filePath);
+            string decryptedJson = Decrypt(fileBytes, password);
+            
+            // Salva o JSON limpo em um novo arquivo
+            File.WriteAllText("SaveFile_Live_Decrypted.json", decryptedJson);
+            Console.WriteLine("Sucesso! Arquivo descriptografado salvo como SaveFile_Live_Decrypted.json");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Erro ao descriptografar. A senha pode estar incorreta ou o arquivo corrompido.");
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+    private static string Decrypt(byte[] bytes, string password)
+    {
+        // O Easy Save 3 gera a chave usando um hash MD5 da string da senha
+        byte[] key = new MD5CryptoServiceProvider().ComputeHash(Encoding.UTF8.GetBytes(password));
+        
+        // O Easy Save 3 usa AES (Rijndael)
+        using (RijndaelManaged rijndael = new RijndaelManaged())
+        {
+            rijndael.Key = key;
+            rijndael.Mode = CipherMode.ECB; // ES3 geralmente usa ECB por padrão (menos seguro, mas rápido)
+            rijndael.Padding = PaddingMode.PKCS7;
+
+            using (ICryptoTransform decryptor = rijndael.CreateDecryptor())
+            {
+                byte[] decryptedBytes = decryptor.TransformFinalBlock(bytes, 0, bytes.Length);
+                return Encoding.UTF8.GetString(decryptedBytes);
+            }
+        }
+    }
+}
+```eof
+
+### Resumo do que fazer agora:
+1. Verifique a pasta do jogo e descubra se é **Mono** ou **IL2CPP**.
+2. Descompile o `Assembly-CSharp.dll` no **dnSpy**.
+3. Encontre a variável `encryptionPassword`.
+4. Coloque a senha no script acima, rode-o apontando para o seu `.es3`, e ele cuspirá o JSON purinho.
+
+Se você conseguir abrir a DLL no dnSpy mas tiver dificuldade de achar a senha, me avise como é o nome do jogo que posso tentar te orientar melhor sobre onde os devs costumam esconder isso!
+
+```

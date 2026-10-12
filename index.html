@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolTaskBarHero (TTBH) - Save Analyzer & Progression Optimizer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2.6.5">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Header -->
+        <header class="top-nav">
+            <div class="logo-wrap">
+                <span class="logo-badge">TTBH</span>
+                <div class="logo">
+                    <h1>Tool Task Bar Hero</h1>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <div id="save-status" class="nav-status">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span id="status-text">Nenhum save conectado</span>
+                </div>
+                <button id="btn-load-demo" class="btn btn-secondary btn-sm" title="Carregar dados de exemplo para demonstração">
+                    ⚡ Modo Demo
+                </button>
+                <button id="btn-reset-save" class="btn btn-secondary btn-sm hidden">
+                    🔄 Trocar Save
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Upload Section (Visible by default until a save is imported) -->
+            <section id="upload-section" class="upload-hero glass-card fade-in">
+                <h2>Conectar Save do Jogo</h2>
+                <p>O TTBH atua 100% no seu navegador com a Web Crypto API. O arquivo nunca sai da sua máquina.</p>
+                
+                <div style="display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                    <button id="btn-load-steam-direct" class="btn btn-primary" style="background: linear-gradient(135deg, #10b981, #059669); font-size: 1rem; padding: 0.8rem 1.5rem;">
+                        ⚡ Carregar Save Atual da Steam (Linux)
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('file-input').click()">
+                        📁 Procurar Arquivo Manualmente
+                    </button>
+                </div>
+
+                <div class="upload-area" id="drop-zone">
+                    <div class="upload-icon">⚔️</div>
+                    <div class="upload-text-main">Ou arraste seu SaveFile_Live.es3 aqui</div>
+                    <p style="margin-bottom: 0.8rem; font-size: 0.85rem; color: var(--text-secondary);">Suporta SaveFile_Live.es3, backups e arquivos .bak</p>
+                    <input type="file" id="file-input" accept=".es3,.bak,application/octet-stream" hidden>
+                    
+                    <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+                        <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Pasta padrão dos saves no seu Linux:</span>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; max-width: 100%;">
+                            <span class="upload-path-hint" id="linux-save-path" style="user-select: all; cursor: pointer;" title="Clique para selecionar">
+                                /home/lror/.steam/debian-installation/steamapps/compatdata/3678970/pfx/drive_c/users/steamuser/AppData/LocalLow/TesseractStudio/TaskbarHero/SaveFile_Live.es3
+                            </span>
+                            <button id="btn-copy-path" class="btn btn-secondary btn-sm" title="Copiar caminho">📋 Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-actions-bar">
+                    <button class="advanced-settings-toggle" id="toggle-advanced">Configurações Avançadas (Chave Customizada) ▾</button>
+                </div>
+
+                <div id="advanced-box" class="advanced-box hidden">
+                    <div class="input-group">
+                        <label for="custom-password">Senha AES / PBKDF2 (Padrão Oficial embutido):</label>
+                        <input type="text" id="custom-password" placeholder="emuMqG3bLYJ938ZDCfieWJ">
+                    </div>
+                </div>
+
+                <div id="upload-error" class="error-text hidden"></div>
+            </section>
+
+            <!-- Dashboard Section (Revealed after save import) -->
+            <section id="dashboard-section" class="dashboard hidden fade-in">
+                <!-- Schema Drift Guard Banner (Amarelo não-bloqueante) -->
+                <div id="schema-drift-banner" class="hidden" style="background: rgba(234, 179, 8, 0.15); border: 1px solid rgba(234, 179, 8, 0.5); padding: 0.85rem 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.4rem;">⚠️</span>
+                        <div id="schema-drift-message" style="color: #fef08a; font-size: 0.88rem; font-weight: 500;"></div>
+                    </div>
+                    <button id="btn-dismiss-drift-banner" style="background: transparent; border: none; color: #fef08a; cursor: pointer; font-size: 1rem; padding: 0.2rem 0.5rem;" title="Fechar aviso">✕</button>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="overview">
+                        📊 Heróis & Builds
+                    </button>
+                    <button class="tab-btn" data-tab="storage">
+                        🎒 Inventário & Mochila
+                    </button>
+                    <button class="tab-btn" data-tab="pets">
+                        🐾 Pets & Buffs Globais
+                    </button>
+                    <button class="tab-btn" data-tab="cube">
+                        🧊 Otimizador do Cubo (±10 Lv)
+                    </button>
+                    <button class="tab-btn" data-tab="farm">
+                        ⏱️ Eficiência & Gargalos
+                    </button>
+                    <button class="tab-btn" data-tab="farming">
+                        ⚔️ Farming
+                    </button>
+                    <button class="tab-btn" data-tab="chest-sim">
+                        🎁 Chest Sim
+                    </button>
+                    <button class="tab-btn" data-tab="chest-opt">
+                        📦 Chest Optimizer
+                    </button>
+                    <button class="tab-btn" data-tab="bis">
+                        ⚔️ BiS Finder
+                    </button>
+                    <button class="tab-btn" data-tab="runes">
+                        🔮 Rune Planner
+                    </button>
+                    <button class="tab-btn" data-tab="timeline">
+                        📈 Timeline de Backups
+                    </button>
+                    <button class="tab-btn" data-tab="ai">
+                        🤖 Exportar para IA-TBH
+                    </button>
+                    <button class="tab-btn" data-tab="telemetry">
+                        📡 Telemetria
+                    </button>
+                    <button class="tab-btn" data-tab="raw">
+                        🔍 Inspetor JSON
+                    </button>
+                </div>
+
+                <!-- Telemetry Quick Stats (Persistent across tabs) -->
+                <div class="telemetry-grid">
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-details">
+                            <h3>Ouro Acumulado</h3>
+                            <p id="stat-gold">---</p>
+                            <span class="stat-sub">Moeda de troca</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">🧊</div>
+                        <div class="stat-details">
+                            <h3>Nível do Cubo</h3>
+                            <p id="stat-cube-level">---</p>
+                            <span class="stat-sub">Margem segura: ±10 Níveis</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">🏔️</div>
+                        <div class="stat-details">
+                            <h3>Estágio Atual</h3>
+                            <p id="stat-current-stage">---</p>
+                            <span class="stat-sub" id="stat-max-stage">Max: ---</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">⏳</div>
+                        <div class="stat-details">
+                            <h3>Tempo Jogado</h3>
+                            <p id="stat-playtime">---</p>
+                            <span class="stat-sub" id="stat-version">v---</span>
+                            <span class="stat-sub" id="stat-steam-id" style="display:block; font-size:0.75rem; color:#38bdf8; font-weight:600; margin-top:0.2rem;">Steam: ---</span>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card" style="border-color: rgba(255, 0, 122, 0.4);">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-details">
+                            <h3>Build POWER</h3>
+                            <p id="stat-power" style="color: #ff007a; font-weight: 800;">---</p>
+                            <span class="stat-sub" id="stat-power-rank">Tier: ---</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 1: Overview & Heroes -->
+                <div id="tab-overview" class="tab-content">
+                    <!-- Painel de Atividade Acumulada (Aggregates) -->
+                    <div id="card-aggregates" class="glass-card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <h2 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem; margin: 0;">
+                                <span>📊</span> Telemetria Real de Atividade Acumulada (Global Saves)
+                            </h2>
+                            <span style="font-size: 0.72rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 0.2rem 0.5rem; border-radius: 4px;">
+                                Enum Canônico TBH (Types 0-17)
+                            </span>
+                        </div>
+                        
+                        <!-- Linha 1: 5 Métricas -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">MonsterKill</span>
+                                <strong id="agg-monster-kill" style="font-size: 1.1rem; color: #f87171;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">HeroDeath</span>
+                                <strong id="agg-hero-death" style="font-size: 1.1rem; color: #94a3b8;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">GoldEarn</span>
+                                <strong id="agg-gold-earn" style="font-size: 1.1rem; color: #fbbf24;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">BoxOpen</span>
+                                <strong id="agg-box-open" style="font-size: 1.1rem; color: #f59e0b;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">BoxObtain</span>
+                                <strong id="agg-box-obtain" style="font-size: 1.1rem; color: #eab308;">—</strong>
+                            </div>
+                        </div>
+
+                        <!-- Linha 2: 5 Métricas -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem;">
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">StageClear</span>
+                                <strong id="agg-stage-clear" style="font-size: 1.1rem; color: #4ade80;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">StageFail</span>
+                                <strong id="agg-stage-fail" style="font-size: 1.1rem; color: #f43f5e;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">ActBossKill</span>
+                                <strong id="agg-act-boss-kill" style="font-size: 1.1rem; color: #a855f7;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Synthesis</span>
+                                <strong id="agg-synthesis" style="font-size: 1.1rem; color: #38bdf8;">—</strong>
+                            </div>
+                            <div class="buff-pill" style="flex-direction: column; align-items: flex-start; padding: 0.6rem 0.8rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">PlayTime</span>
+                                <strong id="agg-play-time" style="font-size: 1.1rem; color: #60a5fa;">—</strong>
+                            </div>
+                        </div>
+
+                        <!-- Sub-painel: Top-3 SubKeys por Monstro / Dificuldade -->
+                        <div id="agg-subkeys-panel" style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.78rem; color: var(--text-secondary); display: none;">
+                            <strong style="color: var(--text-primary); margin-right: 0.5rem;">🎯 Detalhe por SubKey:</strong>
+                            <span id="agg-subkeys-content">—</span>
+                        </div>
+                    </div>
+
+                    <!-- Auditoria de Combate & Diagnósticos IA -->
+                    <div class="glass-card combat-audit-section" style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span>🛡️</span> Auditoria de Combate & Anomalias (Diagnóstico Cirúrgico IA)
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Detecção automatizada de falsos danos, fendas defensivas, ausência de taunt e gargalos do patch 1.02.01.
+                                </p>
+                            </div>
+                            <span style="font-size: 0.75rem; background: rgba(56, 189, 248, 0.15); color: var(--accent-primary); padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700;">
+                                MOTOR IA-TBH ATIVO
+                            </span>
+                        </div>
+                        <div class="combat-audit-grid" id="combat-audit-container">
+                            <!-- Injected dynamically by app.js -->
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                            <div>
+                                <h2>Roster de Personagens & Builds</h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    👉 <strong>Clique em qualquer herói</strong> para inspecionar os 10 slots de equipamentos, buffs, enchants, decorações e inscrições.
+                                </p>
+                            </div>
+                            <div id="active-pet-badge" style="font-size: 0.85rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); padding: 0.4rem 0.8rem; border-radius: 8px;">
+                                Pet Ativo: <strong id="active-pet-name">---</strong> (<span id="active-pet-boost">---</span>)
+                            </div>
+                        </div>
+
+                        <div class="heroes-grid" id="heroes-container">
+                            <!-- Hero Cards injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Storage (Inventário & Mochila) -->
+                <div id="tab-storage" class="tab-content hidden">
+                    <!-- Stash Value Banner -->
+                    <div class="glass-card" style="margin-bottom: 1rem; background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)); border: 1px solid rgba(250, 204, 21, 0.3);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <div style="font-size: 0.8rem; color: #facc15; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">💎 Avaliação de Mercado (Stash Value)</div>
+                                <div id="stash-value-total" style="font-size: 1.8rem; font-weight: 800; color: #fef08a; margin: 0.2rem 0;">R$ 0,00</div>
+                                <div id="stash-value-sub" style="font-size: 0.8rem; color: var(--text-secondary);">Mochila + Bolsa + Navio de Troca (Trade Ship)</div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                <span style="font-size: 0.8rem; color: var(--text-secondary);">Cotação:</span>
+                                <button id="btn-toggle-price-mode" class="btn-secondary" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; cursor: pointer;">
+                                    🏷️ Modo: Atual
+                                </button>
+                                <button id="btn-open-import-prices" class="btn btn-secondary btn-sm" style="font-size: 0.8rem; padding: 0.4rem 0.8rem; cursor: pointer;">
+                                    📥 Importar Preços (CSV)
+                                </button>
+                                <button id="btn-refresh-market-prices" title="Recarregar cotações de mercado" style="background: none; border: none; cursor: pointer; font-size: 1.1rem; color: var(--accent-primary);">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h2>Inventário & Mochila Completa</h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem;">
+                                    Todos os itens guardados na bolsa do jogador e no baú/stash.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <input type="text" id="storage-search" placeholder="🔍 Buscar por nome ou ID..." style="padding: 0.5rem 0.8rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary); font-size: 0.85rem; width: 220px;">
+                                <select id="storage-filter-type" style="padding: 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary); font-size: 0.85rem;">
+                                    <option value="ALL">Todos os Tipos</option>
+                                    <option value="WEAPON">Armas</option>
+                                    <option value="ARMOR">Armaduras / Roupas</option>
+                                    <option value="ACCESSORY">Acessórios</option>
+                                    <option value="CUBE_SAFE">Margem Segura Cubo (±10)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                            Exibindo: <strong id="storage-filtered-count" style="color: var(--text-primary);">0</strong> itens
+                        </div>
+
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Local</th>
+                                        <th>Item</th>
+                                        <th>Raridade</th>
+                                        <th>Nível</th>
+                                        <th>Static Price</th>
+                                        <th>Market Price</th>
+                                        <th>Encantamentos</th>
+                                        <th>Decorações</th>
+                                        <th>Inscrições</th>
+                                        <th>Ação Recomendada</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="storage-tbody">
+                                    <!-- Rows injected dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Pets & Global Buffs -->
+                <div id="tab-pets" class="tab-content hidden">
+                    <div class="glass-card">
+                        <h2>Pets Desbloqueados & Soma Global de Buffs</h2>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                            Os pets do Task Bar Hero concedem bônus de acúmulo de EXP, Ouro e taxas de baús raros.
+                        </p>
+
+                        <!-- Total Buffs Box -->
+                        <div class="pet-total-buffs-card">
+                            <h3>🌟 Soma Acumulada de Buffs de Todos os Pets na Conta</h3>
+                            <div class="pet-buffs-summary-grid">
+                                <div class="buff-pill">
+                                    <span>Bônus de EXP</span>
+                                    <strong id="pet-sum-exp">+0%</strong>
+                                </div>
+                                <div class="buff-pill">
+                                    <span>Bônus de Ouro</span>
+                                    <strong id="pet-sum-gold">+0%</strong>
+                                </div>
+                                <div class="buff-pill">
+                                    <span>Baús Normais</span>
+                                    <strong id="pet-sum-normal-chest">+0%</strong>
+                                </div>
+                                <div class="buff-pill">
+                                    <span>Baús de Chefes</span>
+                                    <strong id="pet-sum-boss-chest">+0%</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- All Pets Grid -->
+                        <h3 style="margin: 1.5rem 0 0.75rem; font-size: 1.1rem;">Roster Completo de Companheiros</h3>
+                        <div class="pets-grid" id="pets-container">
+                            <!-- Pets injected dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Cube Optimization -->
+                <div id="tab-cube" class="tab-content hidden">
+                    <div class="glass-card">
+                        <h2>Otimizador do Cubo Heroico</h2>
+                        <div class="cube-summary-bar">
+                            <div class="cube-rule-alert">
+                                <span class="cube-rule-tag">REGRA CRÍTICA</span>
+                                <span>Alimente o Cubo <strong>estritamente</strong> com itens de margem <strong>±10 níveis</strong> do Cubo para garantir 100% da EXP!</span>
+                            </div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                                Total no Inventário: <strong id="inv-total-count" style="color: var(--text-primary);">0</strong> itens
+                            </div>
+                        </div>
+
+                        <div class="inventory-split">
+                            <!-- Safe Column -->
+                            <div class="inv-column safe">
+                                <div class="inv-column-header">
+                                    <h3>🟢 Recomendado para Síntese</h3>
+                                    <span class="badge-count safe" id="synth-count">0</span>
+                                </div>
+                                <ul id="synth-list" class="item-list">
+                                    <!-- Safe items injected here -->
+                                </ul>
+                            </div>
+
+                            <!-- Danger Column -->
+                            <div class="inv-column danger">
+                                <div class="inv-column-header">
+                                    <h3>🔴 Vender / Alquimia (Penalidade)</h3>
+                                    <span class="badge-count danger" id="alchemy-count">0</span>
+                                </div>
+                                <ul id="alchemy-list" class="item-list">
+                                    <!-- Penalty items injected here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulação de Síntese (Synthesis Simulator) -->
+                    <div class="glass-card" style="margin-top: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; margin: 0;">
+                                    <span>⚗️</span> Simulador de Síntese & Projeção de Custo
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Calcula XP de Cubo, ouro gasto/obtido e Valor Esperado (EV) de avanço entre graus de raridade.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Inputs de Simulação -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; margin-bottom: 1.25rem; background: rgba(0,0,0,0.25); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
+                            <div style="flex: 1; min-width: 140px;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Quantidade de itens</label>
+                                <input type="number" id="sim-input-count" value="10" min="1" max="1000" style="width: 100%; padding: 0.5rem 0.75rem; border-radius: 6px; background: rgba(15,23,42,0.8); border: 1px solid var(--card-border); color: var(--text-primary); font-size: 0.9rem;" />
+                            </div>
+                            <div style="flex: 1; min-width: 160px;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Grade de origem</label>
+                                <select id="sim-select-from" style="width: 100%; padding: 0.5rem 0.75rem; border-radius: 6px; background: rgba(15,23,42,0.8); border: 1px solid var(--card-border); color: var(--text-primary); font-size: 0.9rem;">
+                                    <option value="COMMON" selected>COMMON</option>
+                                    <option value="UNCOMMON">UNCOMMON</option>
+                                    <option value="RARE">RARE</option>
+                                    <option value="LEGENDARY">LEGENDARY</option>
+                                    <option value="IMMORTAL">IMMORTAL</option>
+                                    <option value="ARCANA">ARCANA</option>
+                                    <option value="BEYOND">BEYOND</option>
+                                    <option value="CELESTIAL">CELESTIAL</option>
+                                    <option value="DIVINE">DIVINE</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 160px;">
+                                <label style="display: block; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.4rem;">Grade alvo</label>
+                                <select id="sim-select-to" style="width: 100%; padding: 0.5rem 0.75rem; border-radius: 6px; background: rgba(15,23,42,0.8); border: 1px solid var(--card-border); color: var(--text-primary); font-size: 0.9rem;">
+                                    <option value="UNCOMMON" selected>UNCOMMON</option>
+                                    <option value="RARE">RARE</option>
+                                    <option value="LEGENDARY">LEGENDARY</option>
+                                    <option value="IMMORTAL">IMMORTAL</option>
+                                    <option value="ARCANA">ARCANA</option>
+                                    <option value="BEYOND">BEYOND</option>
+                                    <option value="CELESTIAL">CELESTIAL</option>
+                                    <option value="DIVINE">DIVINE</option>
+                                    <option value="COSMIC">COSMIC</option>
+                                </select>
+                            </div>
+                            <button id="btn-run-synthesis-sim" style="padding: 0.55rem 1.25rem; background: var(--accent-primary); color: #000; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; transition: opacity 0.2s;">
+                                Simular
+                            </button>
+                        </div>
+
+                        <!-- Tabela de Resultado da Simulação -->
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Grade</th>
+                                        <th>Itens Saída (EV)</th>
+                                        <th>XP esperado</th>
+                                        <th>Ouro esperado</th>
+                                        <th>Taxa Sucesso</th>
+                                        <th>EV Líquido</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sim-result-tbody">
+                                    <tr>
+                                        <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">Defina os parâmetros e clique em "Simular".</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Farm & Bottlenecks -->
+                <div id="tab-farm" class="tab-content hidden">
+                    <div class="farm-container">
+                        <!-- Pet Projection Card -->
+                        <div class="glass-card">
+                            <h2>Eficiência Comparativa de Pets</h2>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                Simulação de rendimento por 1.000 inimigos abatidos no seu estágio atual:
+                            </p>
+
+                            <div class="pet-comparison-grid">
+                                <div class="pet-box">
+                                    <h4>🦇 Morcego</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem;">Foco em Progressão & Drops</p>
+                                    <div class="pet-stat-row">
+                                        <span>Bônus EXP</span>
+                                        <span class="pet-stat-val exp">+15%</span>
+                                    </div>
+                                    <div class="pet-stat-row">
+                                        <span>Baús Extras</span>
+                                        <span class="pet-stat-val chests">+10%</span>
+                                    </div>
+                                    <div class="pet-stat-row">
+                                        <span>Projeção (1k)</span>
+                                        <span class="pet-stat-val exp" id="bat-proj-exp">--- EXP</span>
+                                    </div>
+                                </div>
+
+                                <div class="pet-box">
+                                    <h4>👁️ Vigia</h4>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem;">Foco em Acúmulo de Moedas</p>
+                                    <div class="pet-stat-row">
+                                        <span>Bônus Ouro</span>
+                                        <span class="pet-stat-val gold">+15%</span>
+                                    </div>
+                                    <div class="pet-stat-row">
+                                        <span>Baús Extras</span>
+                                        <span class="pet-stat-val chests">0%</span>
+                                    </div>
+                                    <div class="pet-stat-row">
+                                        <span>Projeção (1k)</span>
+                                        <span class="pet-stat-val gold" id="watcher-proj-gold">--- Ouro</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage Telemetry & Logs Card -->
+                        <div class="glass-card" style="margin-bottom: 1.25rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h2>Telemetria de Estágio & Tempos de Limpeza</h2>
+                                    <p style="color: var(--text-secondary); font-size: 0.85rem;">
+                                        Identificação do estágio atual dos heróis e registro dos últimos tempos de conclusão extraídos do log oficial <code style="color: var(--accent-primary);">[Estágio X-Y concluido. (Xs)]</code>.
+                                    </p>
+                                </div>
+                                <span id="stage-badge-status" class="gear-tag badge-tier-6">Ativo em Batalha</span>
+                            </div>
+
+                            <div class="stage-telemetry-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem;">
+                                <div class="modal-stat-card">
+                                    <div class="modal-stat-label">Estágio Atual</div>
+                                    <div class="modal-stat-val" id="telemetry-stage-name" style="color: var(--accent-primary); font-size: 1.15rem;">Ato 3 - 3-9</div>
+                                    <div class="modal-stat-sub" id="telemetry-stage-sub">Tormento • Núcleo do Abismo</div>
+                                </div>
+                                <div class="modal-stat-card">
+                                    <div class="modal-stat-label">Últimas 3 Conclusões</div>
+                                    <div class="modal-stat-val" id="telemetry-last-three" style="color: #facc15; font-size: 1.15rem;">260s</div>
+                                    <div class="modal-stat-sub">Tempo dos 3 últimos ciclos</div>
+                                </div>
+                                <div class="modal-stat-card">
+                                    <div class="modal-stat-label">Tempo Médio Registrado</div>
+                                    <div class="modal-stat-val" id="telemetry-avg-time" style="color: #4ade80; font-size: 1.15rem;">260s (~4.3 min)</div>
+                                    <div class="modal-stat-sub" id="telemetry-avg-sub">Eficiência de Rota</div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 1rem; padding: 0.85rem; background: rgba(0,0,0,0.25); border: 1px solid var(--card-border); border-radius: 8px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); display: flex; justify-content: space-between; align-items: center;">
+                                    <span>📋 Importar / Colar Linhas do Log de Estágio (Player.log):</span>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Ex: [Estágio 3-9 concluido. (260s)]</span>
+                                </label>
+                                <div style="display: flex; gap: 0.5rem; margin-top: 0.4rem;">
+                                    <input type="text" id="input-stage-logs" placeholder="Cole logs do jogo aqui ou digite [Estágio 3-9 concluido. (260s)]" style="flex: 1; padding: 0.55rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary); font-family: monospace; font-size: 0.85rem;">
+                                    <button id="btn-parse-stage-log" class="btn btn-primary btn-sm">Processar Log</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottleneck Analysis Card -->
+                        <div class="glass-card">
+                            <h2>Detector de Gargalos (Bottlenecks)</h2>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                A meta da comunidade (Clear Time ótimo) é de <strong>menos de 60 segundos</strong> por chefe/onda.
+                            </p>
+
+                            <div style="margin-top: 1rem;">
+                                <label style="font-size: 0.85rem; color: var(--text-secondary);">Tempo Médio de Clear Observado (segundos):</label>
+                                <div style="display: flex; gap: 0.5rem; margin-top: 0.4rem;">
+                                    <input type="number" id="input-clear-time" value="48" style="width: 100px; padding: 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                                    <button id="btn-recalc-bottleneck" class="btn btn-secondary btn-sm">Recalcular</button>
+                                </div>
+                            </div>
+
+                            <div id="bottleneck-alert" class="alert-box success">
+                                <div class="alert-icon">⚡</div>
+                                <div>
+                                    <strong id="bottleneck-title">Tempo Otimizado</strong>
+                                    <p id="bottleneck-desc" style="font-size: 0.85rem; margin-top: 0.2rem;">Sua velocidade atual permite taxa máxima de baús e rotação contínua de drops.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Farming Calculator (Fase 10) -->
+                <div id="tab-farming" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>⚔️</span> Calculadora de Farming & Rotas
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Otimização de rotas com base em densidade EXP/HP real, level penalties e taxas por hora.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Controles de Filtro e Parâmetros -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border); margin-bottom: 1.25rem;">
+                            <div>
+                                <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Tempo de Clear (segundos):</label>
+                                <input type="number" id="farming-clear-time" value="15" style="width: 110px; padding: 0.45rem 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                            </div>
+                            <div>
+                                <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Nível do Herói:</label>
+                                <input type="number" id="farming-hero-level" value="35" style="width: 100px; padding: 0.45rem 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                            </div>
+                            <div>
+                                <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Otimizar por:</label>
+                                <select id="farming-optimize-goal" style="padding: 0.45rem 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                                    <option value="exp">EXP/hora</option>
+                                    <option value="gold">Gold/hora</option>
+                                </select>
+                            </div>
+                            <button id="btn-calc-farming" class="btn btn-primary btn-sm">Calcular Melhores Stages</button>
+                        </div>
+
+                        <!-- Highlight de Sugestão -->
+                        <div id="farming-suggest-box" style="margin-bottom: 1.25rem; padding: 0.9rem 1.2rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; border-radius: 8px; font-size: 0.9rem; color: #6ee7b7;">
+                            Carregando sugestão recomendada...
+                        </div>
+
+                        <!-- Tabela de Ranking -->
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Stage</th>
+                                        <th>Diff</th>
+                                        <th>Nome</th>
+                                        <th>Lv</th>
+                                        <th>EXP / Clear</th>
+                                        <th>Gold / Clear</th>
+                                        <th>EXP / Hora</th>
+                                        <th>Gold / Hora</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="farming-table-tbody">
+                                    <!-- Injetado dinamicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Chest Simulator (Fase 10) -->
+                <div id="tab-chest-sim" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>🎁</span> Simulador de Abertura de Baús (Chest Simulator)
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Baseado em dados de game files (probonk.com). Drop rates reais podem variar.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Controles de Simulação -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border); margin-bottom: 1.25rem;">
+                            <div style="min-width: 200px;">
+                                <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Seletor de Box:</label>
+                                <select id="chest-box-select" style="width: 100%; padding: 0.45rem 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                                    <option value="stageBossBox4">Stage Boss Box 4 (Lv40+)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Quantidade (1-10000):</label>
+                                <input type="number" id="chest-sim-count" value="1000" min="1" max="10000" style="width: 110px; padding: 0.45rem 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary);">
+                            </div>
+                            <button id="btn-run-chest-sim" class="btn btn-primary btn-sm">Simular Abertura</button>
+                        </div>
+
+                        <!-- Resumo e Métricas EV -->
+                        <div id="chest-sim-summary" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                            <div class="stat-card glass-card" style="padding: 0.8rem 1.2rem; min-width: 200px;">
+                                <div style="font-size: 0.8rem; color: var(--text-secondary);">Expected Runs (50% Prob)</div>
+                                <div style="font-size: 1.3rem; font-weight: bold; color: #a855f7;" id="chest-immortal-runs">~145 runs</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">para Grade IMMORTAL</div>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico de Distribuição SVG -->
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid var(--card-border); padding: 1rem; margin-bottom: 1.25rem;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Distribuição Obtida por Grade (%)</h3>
+                            <svg id="chest-dist-svg" width="600" height="150" viewBox="0 0 600 150" style="width: 100%; height: auto; min-height: 140px;">
+                                <!-- Bar chart dinâmico -->
+                            </svg>
+                        </div>
+
+                        <!-- Tabela de Resultados -->
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Grade</th>
+                                        <th>Drops Reais</th>
+                                        <th>% Obtida</th>
+                                        <th>% Esperada</th>
+                                        <th>Diferença (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chest-results-tbody">
+                                    <!-- Injetado dinamicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 5.3: Chest Optimizer (Fase 10 - Release Candidate) -->
+                <div id="tab-chest-opt" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>📦</span> Otimizador de Baús & Drop Finder (EV Engine)
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Cálculo de Valor Esperado (EV) em ouro, recomendação dinâmica por estágio e simulador Monte Carlo.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button id="btn-run-monte-carlo" class="btn btn-primary btn-sm">
+                                    🎲 Simular 100 Aberturas (Monte Carlo)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card de Sugestão Atual Baseada no Save -->
+                        <div id="chest-opt-suggestion-card" style="margin-bottom: 1.25rem; padding: 1.1rem 1.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid #38bdf8; border-radius: 8px; font-size: 0.9rem; color: #bae6fd;">
+                            Carregue um save para receber sugestões de abertura personalizadas.
+                        </div>
+
+                        <!-- Gráfico SVG Top 10 EV -->
+                        <div style="background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid var(--card-border); padding: 1rem; margin-bottom: 1.25rem;">
+                            <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--accent-primary);">Ranking de EV Líquido em Ouro (Top Baús)</h3>
+                            <svg id="chest-opt-svg" width="600" height="160" viewBox="0 0 600 160" style="width: 100%; height: auto; min-height: 150px;">
+                                <!-- SVG Bar Chart dinâmico -->
+                            </svg>
+                        </div>
+
+                        <!-- Tabela de Ranking de Baús por EV -->
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Baú</th>
+                                        <th>Custo (Ouro)</th>
+                                        <th>EV Bruto Unitário</th>
+                                        <th>EV Líquido Unitário</th>
+                                        <th>Viabilidade Econômica</th>
+                                        <th>Motivo / Sugestão</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chest-opt-tbody">
+                                    <!-- Injetado dinamicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Resultado Monte Carlo -->
+                        <div id="monte-carlo-results-box" class="hidden" style="margin-top: 1.25rem; padding: 1rem; background: rgba(0,0,0,0.4); border-radius: 8px; border: 1px solid var(--card-border);">
+                            <h3 style="font-size: 0.95rem; color: #facc15; margin-bottom: 0.5rem;">Resultado da Simulação de Monte Carlo (100 Aberturas)</h3>
+                            <div id="monte-carlo-summary-text" style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;"></div>
+                            <div class="storage-table-wrap">
+                                <table class="storage-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Dropado</th>
+                                            <th>Quantidade Obtida</th>
+                                            <th>% Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="monte-carlo-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 6: AI Exporter (Markdown Otimizado em Tokens) -->
+                <div id="tab-ai" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+                            <div>
+                                <h2>Relatório Otimizado para IA-TBH (Markdown)</h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem;">
+                                    Formato estruturado de alta densidade em tokens para análise avançada por inteligência artificial.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button id="btn-copy-ai-md" class="btn btn-primary btn-sm">
+                                    📋 Copiar Prompt para IA
+                                </button>
+                                <button id="btn-download-ai-md" class="btn btn-secondary btn-sm">
+                                    💾 Baixar .md
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="ai-markdown-content" class="markdown-viewer" readonly spellcheck="false">// O relatório de IA será gerado ao carregar o save...</textarea>
+                    </div>
+                </div>
+
+                <!-- Tab 6: BiS Finder -->
+                <div id="tab-bis" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>⚔️</span> Best-in-Slot (BiS) Finder por Herói
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Analisa os itens do inventário, mochila e navio sugerindo os maiores ganhos de poder para cada slot.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.75rem; align-items: center;">
+                                <label style="font-size: 0.85rem; color: var(--text-secondary);">Herói:</label>
+                                <select id="bis-select-hero" style="padding: 0.4rem 0.8rem; border-radius: 6px; background: rgba(15,23,42,0.8); border: 1px solid var(--card-border); color: var(--text-primary); font-size: 0.85rem;">
+                                    <option value="101" selected>Cavaleiro (Knight)</option>
+                                    <option value="201">Explorador (Ranger)</option>
+                                    <option value="301">Feiticeiro (Sorcerer)</option>
+                                    <option value="401">Sacerdote (Priest)</option>
+                                    <option value="501">Caçador (Hunter)</option>
+                                    <option value="601">Matador (Slayer)</option>
+                                </select>
+                                <button id="btn-apply-bis-local" style="padding: 0.4rem 0.9rem; background: var(--accent-primary); color: #000; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;">
+                                    📌 Salvar Anotação Local
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="storage-table-wrap">
+                            <table class="storage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Slot</th>
+                                        <th>Item Atual</th>
+                                        <th>Melhor Item (BiS)</th>
+                                        <th>Δ Score</th>
+                                        <th>Motivo / Ganho</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bis-tbody">
+                                    <!-- Injected dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 7: Rune Planner -->
+                <div id="tab-runes" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>🔮</span> Planejador de Runas (248 Nós Canônicos)
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Simulação de avanço da árvore, custos por nível em ouro e progressão de desbloqueios.
+                                </p>
+                            </div>
+                            <div style="font-size: 0.9rem; background: rgba(0,0,0,0.3); padding: 0.4rem 0.8rem; border-radius: 8px; border: 1px solid var(--card-border);">
+                                Progresso Global: <strong id="rune-progress-text" style="color: var(--accent-primary);">0 / 248</strong>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.25rem; align-items: start;">
+                            <!-- Visualizador SVG da Árvore de Runas -->
+                            <div style="background: rgba(0,0,0,0.4); border-radius: 8px; border: 1px solid var(--card-border); padding: 1rem; overflow: auto; max-height: 480px;">
+                                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; display: flex; gap: 1rem;">
+                                    <span>🟢 Desbloqueada</span>
+                                    <span>🟡 Em Progresso</span>
+                                    <span>🔵 Disponível</span>
+                                    <span>🔒 Bloqueada</span>
+                                </div>
+                                <svg id="rune-tree-svg" width="600" height="400" viewBox="0 0 600 400" style="width: 100%; height: auto; min-height: 380px;">
+                                    <!-- Dynamic runes nodes & links -->
+                                </svg>
+                            </div>
+
+                            <!-- Painel Lateral de Recomendações e Custos -->
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <div class="glass-card" style="padding: 1rem; background: rgba(30,41,59,0.5);">
+                                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #facc15;">Próximas Runas Recomendadas</h3>
+                                    <ul id="rune-recommended-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+                                        <!-- Dynamic items -->
+                                    </ul>
+                                </div>
+                                <div class="glass-card" style="padding: 1rem; background: rgba(30,41,59,0.5);">
+                                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #38bdf8;">Custo Estimado dos Próximos Passos</h3>
+                                    <div style="font-size: 1.4rem; font-weight: 800; color: #fef08a;" id="rune-next-cost">0 G</div>
+                                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Ouro necessário para evoluir os 5 passos sugeridos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 8: Timeline de Backups -->
+                <div id="tab-timeline" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>📈</span> Linha do Tempo de Múltiplos Backups
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Arraste múltiplos saves para comparar a evolução do Ouro, Nível do Cubo e Estágio ao longo do tempo.
+                                </p>
+                            </div>
+                            <div>
+                                <button id="btn-export-timeline-json" class="btn btn-secondary btn-sm">
+                                    📥 Exportar Timeline JSON
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Zona de Upload de Múltiplos Saves -->
+                        <div id="timeline-dropzone" style="border: 2px dashed rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 1.5rem; text-align: center; background: rgba(0,0,0,0.25); margin-bottom: 1.25rem; cursor: pointer;">
+                            <input type="file" id="timeline-file-input" multiple accept=".es3" style="display: none;" />
+                            <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">📂</div>
+                            <strong style="color: var(--text-primary);">Clique ou arraste múltiplos arquivos .es3 aqui</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem;">Suporta backups periódicos e daily backups do EasySave3</p>
+                        </div>
+
+                        <!-- Aviso de contagem mínima -->
+                        <div id="timeline-empty-notice" style="text-align: center; padding: 2rem; color: var(--text-muted); background: rgba(0,0,0,0.2); border-radius: 8px; margin-bottom: 1.25rem;">
+                            Carregue ≥2 backups para comparar a evolução temporal.
+                        </div>
+
+                        <!-- Conteúdo da Timeline (Visível com >=2 saves) -->
+                        <div id="timeline-content" class="hidden">
+                            <!-- Gráfico SVG Normalizado -->
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid var(--card-border); padding: 1rem; margin-bottom: 1.25rem;">
+                                <div style="display: flex; gap: 1.5rem; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                                    <span style="color: #fbbf24;">● Ouro</span>
+                                    <span style="color: #60a5fa;">● Nível do Cubo</span>
+                                    <span style="color: #4ade80;">● Estágio</span>
+                                </div>
+                                <svg id="timeline-svg" width="600" height="220" viewBox="0 0 600 220" style="width: 100%; height: auto; min-height: 200px;">
+                                    <!-- Dynamic series lines -->
+                                </svg>
+                            </div>
+
+                            <!-- Tabela de Deltas Consecutivos -->
+                            <div class="storage-table-wrap">
+                                <table class="storage-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Snapshot De</th>
+                                            <th>Snapshot Para</th>
+                                            <th>Intervalo</th>
+                                            <th>Δ Ouro</th>
+                                            <th>Δ Cubo</th>
+                                            <th>Δ Estágio</th>
+                                            <th>Δ Itens</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="timeline-diff-tbody">
+                                        <!-- Injected dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Telemetria V2 (Player.log cross-ref) -->
+                <div id="tab-telemetry" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+                            <div>
+                                <h2 style="display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                                    <span>📡</span> Telemetria V2 (Player.log & Runtime)
+                                </h2>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.2rem;">
+                                    Diagnóstico em tempo real de ciclos de combate, fila de espera (WaitQueue), seeds de sessão e integridade de progressão.
+                                </p>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button id="btn-apply-telemetry-farming" class="btn btn-primary btn-sm" style="display: flex; align-items: center; gap: 0.4rem;">
+                                    <span>⚡</span> Aplicar tempo real no Farming
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Dropzone / Input para Player.log -->
+                        <div id="telemetry-log-dropzone" style="border: 2px dashed var(--card-border); border-radius: 8px; padding: 1.5rem; text-align: center; background: rgba(0,0,0,0.2); margin-bottom: 1.5rem; cursor: pointer;">
+                            <input type="file" id="telemetry-log-file-input" accept=".log,.txt" style="display: none;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+                            <h4 style="margin: 0; color: var(--text-primary);">Carregar Player.log</h4>
+                            <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 0.3rem 0 0 0;">
+                                Arraste o Player.log aqui ou clique para selecionar
+                            </p>
+                        </div>
+
+                        <!-- Banner de Alerta Crítico (Stuck Stage / Softlock) -->
+                        <div id="telemetry-stuck-alert" class="hidden" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.5); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="font-size: 1.5rem;">🛑</span>
+                            <div>
+                                <div style="font-weight: 700; color: #f87171;">Alerta de Softlock / Stage Travado</div>
+                                <div id="telemetry-stuck-desc" style="font-size: 0.85rem; color: #fca5a5;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Grid de Cards de Telemetria -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="stat-card glass-card" style="margin: 0;">
+                                <div class="stat-icon">⏱️</div>
+                                <div class="stat-details">
+                                    <h3>Ciclo Médio de Combate</h3>
+                                    <p id="telemetry-median-cycle">---</p>
+                                    <span class="stat-sub" id="telemetry-cooldown-count">0 amostras</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card glass-card" style="margin: 0;">
+                                <div class="stat-icon">⏳</div>
+                                <div class="stat-details">
+                                    <h3>WaitQueue Countdown</h3>
+                                    <p id="telemetry-wait-countdown">---</p>
+                                    <span class="stat-sub" id="telemetry-wait-status">Sem fila ativa</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card glass-card" style="margin: 0;">
+                                <div class="stat-icon">🌱</div>
+                                <div class="stat-details">
+                                    <h3>Sementes (Seeds)</h3>
+                                    <p id="telemetry-seeds" style="font-size: 1.1rem;">---</p>
+                                    <span class="stat-sub" id="telemetry-seed-labels">Personal / Queue</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card glass-card" style="margin: 0;">
+                                <div class="stat-icon">🏷️</div>
+                                <div class="stat-details">
+                                    <h3>Build do Client</h3>
+                                    <p id="telemetry-client-build" style="font-size: 1.1rem;">---</p>
+                                    <span class="stat-sub" id="telemetry-build-status">Suportado: v1.0.4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detalhes de Eventos Extraídos -->
+                        <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--card-border);">
+                            <h4 style="margin: 0 0 0.5rem 0; font-size: 0.9rem; color: var(--text-secondary);">Eventos de Gravação & Diagnóstico</h4>
+                            <div id="telemetry-event-details" style="font-size: 0.85rem; color: var(--text-primary); line-height: 1.6;">
+                                Nenhum log carregado no momento. Arraste seu Player.log acima para inspecionar métricas da sessão.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 9: Raw JSON Inspector -->
+                <div id="tab-raw" class="tab-content hidden">
+                    <div class="glass-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h2>Inspetor de Save Descriptografado</h2>
+                            <button id="btn-download-json" class="btn btn-secondary btn-sm">
+                                💾 Baixar JSON Descriptografado
+                            </button>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+                            Estrutura pura extraída do seu SaveFile_Live.es3:
+                        </p>
+                        <pre class="json-viewer" id="json-viewer-content">// Carregando dados...</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Detalhado de Personagem -->
+    <div id="hero-modal" class="modal-backdrop hidden">
+        <div class="modal-card glass-card">
+            <div class="modal-header">
+                <div class="modal-hero-badge" id="modal-hero-icon">🛡️</div>
+                <div class="modal-title-wrap">
+                    <h3 id="modal-hero-name">Cavaleiro</h3>
+                    <span id="modal-hero-subtitle" style="font-size: 0.8rem; color: var(--text-secondary);">Classe: Knight • Lv. 101</span>
+                </div>
+                <button id="btn-close-modal" class="modal-close-btn">&times;</button>
+            </div>
+
+            <div class="modal-body-split">
+                <!-- Coluna da Esquerda: Atributos & Habilidades -->
+                <div class="modal-col-stats">
+                    <div class="section-title">📊 Atributos de Combate</div>
+                    <div class="modal-stats-grid" id="modal-hero-stats">
+                        <!-- Stats injected dynamically -->
+                    </div>
+
+                    <div class="section-title" style="margin-top: 1.25rem;">✨ Habilidades Equipadas (Party)</div>
+                    <div class="modal-skills-list" id="modal-hero-skills">
+                        <!-- Skills injected dynamically -->
+                    </div>
+
+                    <div class="section-title" style="margin-top: 1.25rem;">
+                        <span>🌟 Todas as Habilidades & Talentos Ativos</span>
+                        <span id="modal-talents-count-badge" class="talent-lvl-badge">0 Ativas</span>
+                    </div>
+                    <div class="modal-talents-list" id="modal-hero-talents">
+                        <!-- All active skill tree attributes injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Coluna da Direita: 10 Slots de Equipamentos -->
+                <div class="modal-col-gear">
+                    <div class="section-title">⚔️ Equipamentos & Buffs (10 Slots)</div>
+                    <div class="modal-gear-list" id="modal-hero-gear">
+                        <!-- Gear slots injected dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Importação de Preços CSV -->
+    <div id="modal-import-prices" class="modal-backdrop hidden">
+        <div class="modal-card glass-card" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2>📥 Importar Preços de Mercado (CSV / JSON)</h2>
+                <button id="btn-close-import-modal" class="btn-close">&times;</button>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                Cole o conteúdo CSV exportado do TBH Index ou formato customizado (<code>itemKey,gold,timestamp</code>).
+            </p>
+            <textarea id="import-prices-input" style="width: 100%; height: 140px; padding: 0.6rem; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; color: var(--text-primary); font-family: monospace; font-size: 0.8rem; margin-bottom: 1rem;" placeholder="301011,150,1718000000&#10;301012,250,1718000000"></textarea>
+            <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button id="btn-do-import-prices" class="btn btn-primary btn-sm">Processar Importação</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 99999; display: flex; flex-direction: column; gap: 10px; pointer-events: none;"></div>
+
+    <!-- Base de dados de jogo oficial local -->
+    <script src="assets/js/gamedata.js"></script>
+
+    <!-- Módulos ES6 -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

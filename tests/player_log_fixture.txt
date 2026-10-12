@@ -1,0 +1,77 @@
+Initialize engine version: 2022.3.20f1 (c9e1e9a3b8cd)
+[APPVERSION] Backend : 1.02.01, Client : 1.02.01
+[1.02.01:142+]
+App ID: 2686600
+steamID=76561198859674725
+Local User: luislror:1001
+seed=881583204,
+[PERSONAL SEED] 771239
+[LOGIN] 1001 : luislror
+[TIME] 2026-10-10T12:00:00Z : UTC, 100, OK
+[SaveDataManager] 세이브 파일 로드 성공: SaveFile_Live.es3
+AllItemCache Item Count : 253
+Client AllItemList Item Count : 253
+next Stage Not found Current Stage Key : 4309
+[TryAllocate] Attribute 101 is already at max level 50
+[TryAllocate] Attribute 102 is already at max level 50
+[TryAllocate] Attribute 201 is already at max level 25
+InventoryAddItemResult "itemKey": "301011", "itemId": 301011
+InventoryAddItemResult "itemKey": "920052", "itemId": 920052
+InventoryAddItemResult "itemKey": "110001", "itemId": 110001
+[SaveDataManager] 백업 생성 완료: /saves/SaveFile_Live_backup_20261010_100000.es3
+[SaveDataManager] 백업 생성 완료: /saves/SaveFile_Live_backup_20261010_110000.es3
+[SaveDataManager] 백업 생성 완료: /saves/SaveFile_Live_daily_20261010_000000.es3
+TaskbarHero.UI.<OpenBoxAsync>
+TaskbarHero.UI.<OpenBoxAsync>
+TaskbarHero.UI.<OpenBoxAsync>
+TaskbarHero.UI.<OpenBoxAsync>
+TaskbarHero.UI.<OpenBoxAsync>
+TaskbarHero.UI.<AutoChestOpenAsync>
+TaskbarHero.UI.<AutoChestOpenAsync>
+TaskbarHero.UI.<AutoChestOpenAsync>
+TaskbarHero.UI.<OpenAllBoxAsync>
+TaskbarHero.UI.<OpenAllBoxAsync>
+TaskbarHero.UI.<ExchangeOpenBoxAsync>
+TaskbarHero.StageClearFunction:GetParam
+TaskbarHero.StageClearFunction:GetParam
+TaskbarHero.StageClearFunction:GetParam
+TaskbarHero.StageClearFunction:GetParam
+TrySynthesisAsyncBackend
+TrySynthesisAsyncBackend
+TaskbarHero.CorrosionFunction:GetParam
+TaskbarHero.InventoryConsume:GetParam
+TaskbarHero.InventoryConsume:GetParam
+TaskbarHero.InventoryExchange:GetParam
+TaskbarHero.InventoryExchange:GetParam
+TaskbarHero.Combat.KnightBaseAtk:niw
+TaskbarHero.Combat.KnightBaseAtk:niw
+TaskbarHero.Combat.KnightBaseAtk:niw
+TaskbarHero.Combat.KnightStrongAtk:niw
+TaskbarHero.Combat.Projectile.ArcherBaseProjectile
+TaskbarHero.Combat.Projectile.ArcherBaseProjectile
+TaskbarHero.Combat.Projectile.ArcherBaseProjectile
+TaskbarHero.Combat.Projectile.ArcherBaseProjectile
+TaskbarHero.Combat.Projectile.ArcherBaseProjectile
+[CoolDown] 100.5,200.0
+[CoolDown] 101.0,195.0
+[CoolDown] 102.5,190.0
+[CoolDown] 103.0,185.0
+[CoolDown] 104.5,180.0
+[CoolDown] 105.0,175.0
+[CoolDown] 106.5,170.0
+[CoolDown] 107.0,165.0
+[SERVER] Failed code reason : Timeout connecting to auth backend
+[SERVER] Failed code reason : Rate limit exceeded
+[UI_Popup] Steam disconnected: True
+[ExchangePending] Pending item source=TradeShip, time=2026-10-10T12:01:00Z
+[ExchangePending] Pending item source=Merchant, time=2026-10-10T12:02:00Z
+[ExchangePending] Pending item source=DropBox, time=2026-10-10T12:03:00Z
+SoundInfoData not found for SoundKey : Sound_Skill_Knight_01
+SoundInfoData not found for SoundKey : Sound_Ambience_Dungeon_02
+steamID=76561198859674725
+[PERSONAL SEED] 771239
+[PERSONAL SEED] 771239
+[LOGIN] 1001 : luislror
+[TIME] 2026-10-10T12:05:00Z : UTC, 101, OK
+next Stage Not found Current Stage Key : 4309
+AllItemCache Item Count : 253

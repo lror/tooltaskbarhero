@@ -1,0 +1,15 @@
+Initialize engine version: 2022.3.20f1 (c9e1e9a3b8cd)
+[APPVERSION] Backend : 1.0.4, Client : 1.0.4
+[1.0.4:5031774+]
+App ID: 3678970
+steamID=76561198859674725
+Local User: luislror:1001
+seed=881583204
+[PERSONAL SEED] 6
+[WaitQueue] steamID=76561198859674725, seed=881583204, waitMinutes=18, waitSeconds=33, endTime=2026-09-08 05:18:33Z
+[CoolDown] 31252,52
+[CoolDown] 31250.10
+[CoolDown] 31255,80
+[IsCanTryNormalBoss] next Stage Not found Current Stage Key : 4309
+bck:nez(String, String, ES3Settings, Boolean, Boolean, CancellationToken)
+bck:nez(String, String, ES3Settings, Boolean, Boolean, CancellationToken)

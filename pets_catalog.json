@@ -1,0 +1,166 @@
+{
+  "1001": {
+    "key": 1001,
+    "name": {
+      "en-US": "Bat",
+      "pt-BR": "Morcego"
+    },
+    "bonuses": [
+      {
+        "type": "CommonChestDropMultiplier",
+        "value": 10,
+        "text": "+10% Common Chest Drop Chance"
+      },
+      {
+        "type": "ExpGainPercent",
+        "value": 15,
+        "text": "+15% EXP Gain"
+      }
+    ],
+    "source": "free",
+    "unlock": "Kill 5,000 Monsters"
+  },
+  "1002": {
+    "key": 1002,
+    "name": {
+      "en-US": "Watcher",
+      "pt-BR": "Vigia"
+    },
+    "bonuses": [
+      {
+        "type": "GoldPerKillPercent",
+        "value": 15,
+        "text": "+15% Gold Per Kill"
+      }
+    ],
+    "source": "free",
+    "unlock": "Kill 5,000 Giant Flies"
+  },
+  "1003": {
+    "key": 1003,
+    "name": {
+      "en-US": "Burning Skeleton",
+      "pt-BR": "Esqueleto Ardente"
+    },
+    "bonuses": [
+      {
+        "type": "StageBossChestDropMultiplier",
+        "value": 10,
+        "text": "+10% Stage Boss Chest Drop Chance"
+      }
+    ],
+    "source": "free",
+    "unlock": "Kill 5,000 Fire Elementals"
+  },
+  "1004": {
+    "key": 1004,
+    "name": {
+      "en-US": "Blue Golem",
+      "pt-BR": "Golem Azul"
+    },
+    "bonuses": [
+      {
+        "type": "CommonChestDropMultiplier",
+        "value": 15,
+        "text": "+15% Common Chest Drop Chance"
+      }
+    ],
+    "source": "free",
+    "unlock": "Kill 5,000 Hell Golems"
+  },
+  "1005": {
+    "key": 1005,
+    "name": {
+      "en-US": "Dark Spirit",
+      "pt-BR": "Espírito Sombrio"
+    },
+    "bonuses": [
+      {
+        "type": "StageBossChestDropMultiplier",
+        "value": 15,
+        "text": "+15% Stage Boss Chest Drop Chance"
+      }
+    ],
+    "source": "free",
+    "unlock": "Kill 5,000 Ghosts"
+  },
+  "6001": {
+    "key": 6001,
+    "name": {
+      "en-US": "Sword",
+      "pt-BR": "Espada"
+    },
+    "bonuses": [
+      {
+        "type": "ExpGainPercent",
+        "value": 15,
+        "text": "+15% EXP Gain"
+      }
+    ],
+    "source": "DLC",
+    "unlock": "Supporter Pack DLC"
+  },
+  "6002": {
+    "key": 6002,
+    "name": {
+      "en-US": "Butterfly",
+      "pt-BR": "Borboleta"
+    },
+    "bonuses": [
+      {
+        "type": "GoldPerKillPercent",
+        "value": 10,
+        "text": "+10% Gold Per Kill"
+      }
+    ],
+    "source": "DLC",
+    "unlock": "Supporter Pack DLC"
+  },
+  "6003": {
+    "key": 6003,
+    "name": {
+      "en-US": "Dragon",
+      "pt-BR": "Dragão"
+    },
+    "bonuses": [
+      {
+        "type": "CommonChestDropMultiplier",
+        "value": 20,
+        "text": "+20% Common Chest Drop Chance"
+      },
+      {
+        "type": "GoldPerKillPercent",
+        "value": 15,
+        "text": "+15% Gold Per Kill"
+      },
+      {
+        "type": "ExpGainPercent",
+        "value": 20,
+        "text": "+20% EXP Gain"
+      }
+    ],
+    "source": "DLC",
+    "unlock": "Supporter Pack DLC"
+  },
+  "1006": {
+    "key": 1006,
+    "name": {
+      "en-US": "Slime",
+      "pt-BR": "Slime"
+    },
+    "bonuses": [
+      {
+        "type": "DefensePercent",
+        "value": 10,
+        "text": "+10% Armor"
+      },
+      {
+        "type": "HpPercent",
+        "value": 10,
+        "text": "+10% Max HP"
+      }
+    ],
+    "source": "farm",
+    "unlock": "Defeat 5,000 Basic Slimes"
+  }
+}
