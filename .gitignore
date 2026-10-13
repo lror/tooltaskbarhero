@@ -1,14 +1,213 @@
+# ══════════════════════════════════════════════════════════════
+# TTBH - .gitignore (v1.0.0)
+# ══════════════════════════════════════════════════════════════
+
+# ══════════════════════════════════════════════════════════════
+# 1. SAVE FILES (DADOS REAIS DO USUÁRIO - NUNCA COMMITAR)
+# ══════════════════════════════════════════════════════════════
+
+# Pastas de saves reais
 save/
 save
 steam_save/
 steam_save
-taskbarhero.wiki/
-taskbarhero.wiki
-tbhindex/
-tbhindex
-cripto/
-cripto
-.kilo/
-.kilo
+saves/
+backup/
+backups/
+
+# Arquivos de save do jogo (Easy Save 3)
+*.es3
+*.es3.bak
+SaveFile_Live*.es3
+SaveFile_Live*.bak
+
+# Logs do jogo (contêm dados sensíveis)
+Player.log
+Player-prev.log
+Player-*.log
+*.log
+!docs/**/*.log
+
+# Arquivos de backend (metadados de sessão)
+backend.dat
+*.dat
+!docs/**/*.dat
+
+# JSON decrypted (dados sensíveis extraídos)
+*_decrypted.json
+*_decrypted_*.json
+PlayerSaveData_decrypted.json
+SaveFile_Live_Decrypted.json
+
+# ══════════════════════════════════════════════════════════════
+# 2. ARQUIVOS DE CONFIGURAÇÃO PESSOAL
+# ══════════════════════════════════════════════════════════════
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Secrets e chaves
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+credentials.json
+config.local.json
+
+# Steam credentials (NUNCA commitar)
+steam_*.json
+steam_*.txt
+
+# ══════════════════════════════════════════════════════════════
+# 3. DEPENDÊNCIAS E CACHES
+# ══════════════════════════════════════════════════════════════
+
+# Node.js
 node_modules/
-node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ══════════════════════════════════════════════════════════════
+# 4. ARQUIVOS DE SISTEMA E EDITORES
+# ══════════════════════════════════════════════════════════════
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+.factorypath
+
+# ══════════════════════════════════════════════════════════════
+# 5. FERRAMENTAS DE DESENVOLVIMENTO E AGENTES IA
+# ══════════════════════════════════════════════════════════════
+
+# Agentes IA e ferramentas
+.kilo/
+.gemini/
+.cursor/
+.cline/
+.roo/
+brain/
+.claude/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*~
+
+# ══════════════════════════════════════════════════════════════
+# 6. BUILD OUTPUT E COBERTURA
+# ══════════════════════════════════════════════════════════════
+
+# Build output
+build/
+dist/
+out/
+target/
+
+# Code coverage
+coverage/
+.nyc_output/
+*.lcov
+.coverage
+htmlcov/
+
+# ══════════════════════════════════════════════════════════════
+# 7. DADOS DE DEMO E TESTES
+# ══════════════════════════════════════════════════════════════
+
+test_saves/
+test_logs/
+fixtures/
+
+# ══════════════════════════════════════════════════════════════
+# 8. DOCUMENTAÇÃO GERADA
+# ══════════════════════════════════════════════════════════════
+
+docs/api/
+docs/build/
+!docs/**/*.md
+!docs/**/*.html
+
+# ══════════════════════════════════════════════════════════════
+# 9. ARQUIVOS ESPECÍFICOS DO PROJETO
+# ══════════════════════════════════════════════════════════════
+
+steam_cache/
+market_cache/
+taskbarhero.wiki/
+tbhindex/
+cripto/
+
+screenshots/
+recordings/
+
+# ══════════════════════════════════════════════════════════════
+# 10. EXCEÇÕES
+# ══════════════════════════════════════════════════════════════
+
+!docs/**/*.log
+!*.example
+!*.sample
+!*.template

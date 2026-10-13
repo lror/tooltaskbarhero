@@ -57,31 +57,36 @@ Se preferir usar interface gráfica:
 
 ---
 
-## 3. Como Carregar o Save do Jogo
+## 3. Como Carregar o Save do Jogo (Smart Upload Cross-Platform)
 
-O TTBH oferece 3 formas simples de carregar seus dados:
+O TTBH detecta automaticamente seu sistema operacional e disponibiliza múltiplos métodos:
 
 ### A. Carregamento Automático da Steam (Linux)
 Se você joga *Taskbar Hero* via Steam no Linux (Proton):
 1. Com o servidor local ativo, clique no botão verde: **"⚡ Carregar Save Atual da Steam (Linux)"**.
 2. A aplicação fará a leitura instantânea do arquivo apontado pelo symlink `steam_save/SaveFile_Live.es3`.
 
-### B. Upload / Arrastar Arquivo Manualmente
-Caso queira analisar um backup ou esteja em outro caminho:
-1. Arraste o arquivo `SaveFile_Live.es3` diretamente para a área de dropzone tracejada.
-2. Ou clique em **"📁 Procurar Arquivo Manualmente"** e selecione o arquivo.
+### B. Selecionar Pasta Completa (Upload em Massa Inteligente)
+1. Clique em **"📁 Selecionar Pasta Completa"**.
+2. O navegador solicitará permissão para ler o diretório selecionado via `webkitdirectory`.
+3. Navegue até a pasta de saves e confirme.
+4. O TTBH filtrará e carregará simultaneamente todos os arquivos compatíveis: Saves (`.es3`, `.bak`), Logs (`Player.log`) e Sessão (`backend.dat`).
 
-**Caminho padrão do save no Linux (Steam/Proton):**
-```text
-~/.steam/debian-installation/steamapps/compatdata/3678970/pfx/drive_c/users/steamuser/AppData/LocalLow/TesseractStudio/TaskbarHero/SaveFile_Live.es3
-```
+### C. Arrastar e Soltar (Drag & Drop)
+1. Use o botão **"📋 Copiar"** na barra de caminho para copiar a rota do seu sistema operacional.
+2. Abra seu gerenciador de arquivos e cole o caminho copiado:
+   - **Windows (`Win + R` ou barra do Explorer):** `%USERPROFILE%\AppData\LocalLow\TesseractStudio\TaskbarHero`
+   - **Linux Nativo:** `~/.config/unity3d/TesseractStudio/TaskbarHero`
+   - **Linux Steam Proton:** `~/.steam/steam/steamapps/compatdata/3678970/pfx/drive_c/users/steamuser/AppData/LocalLow/TesseractStudio/TaskbarHero`
+   - **macOS (`Cmd + Shift + G` no Finder):** `~/Library/Application Support/TesseractStudio/TaskbarHero`
+3. Selecione os arquivos e arraste-os para o dropzone do TTBH.
 
-*(Ou na pasta de compatdata padrão: `~/.local/share/Steam/steamapps/compatdata/3678970/...`)*
-
-### C. Modo de Demonstração (Demo)
+### D. Modo de Demonstração (Demo)
 Para testar a interface sem ter um arquivo de save em mãos:
 1. Clique no botão **"⚡ Modo Demo"** no cabeçalho superior.
 2. O sistema carregará dados pré-configurados de telemetria, heróis, inventário e análise estatística.
+
+Consulte o documento dedicado **[docs/SMART_UPLOAD.md](./SMART_UPLOAD.md)** para o guia aprofundado com capturas e atalhos.
 
 ---
 
@@ -91,13 +96,16 @@ Uma vez carregado o save, o painel exibirá:
 
 | Aba / Módulo | Finalidade |
 | :--- | :--- |
-| **Geral (Overview)** | Resumo de Ouro, EXP, Nível do Cubo, estágio atual do mapa e métricas rápidas. |
-| **Heróis & Party** | Inspeção detalhada de cada herói (níveis, 10 slots de equipamentos com tiers e raridades, talentos e atributos de combate calculados). Clique em um herói para abrir o modal de auditoria. |
+| **Visão Geral** | Resumo de Ouro, EXP, Nível do Cubo, estágio atual do mapa e telemetria acumulada. |
+| **🔨 Builds Detalhadas** | Nova aba com cards completos de heróis, Power Score dinâmico, Hard Caps e acesso com 1 clique aos 10 slots. |
+| **Heróis & Party** | Inspeção detalhada de cada herói (níveis, 10 slots com tiers, raridades e talentos). Clique em um herói para abrir a ficha completa. |
 | **Inventário (Storage)** | Lista completa de itens guardados com filtros por tipo, tier e tags de recomendação para o Cubo. |
 | **Otimizador do Cubo** | Separação rigorosa de itens baseada na regra de ±10 níveis: indica quais itens devem ser usados em **Síntese** e quais devem ir para **Alquimia (Venda)**. |
 | **Pets & Farm** | Cálculo de eficiência de ganhos com Pets (Morcego vs. Vigia) e projeções horárias. |
-| **Auditoria & Gargalos** | Análise de tempo de limpeza de onda (*Clear Time*). Se o tempo exceder 60s, sugere rebaixar o estágio para manter a rentabilidade de baús. Permite também exportar relatórios para IA. |
-| **Exportar JSON** | Baixa o arquivo decodificado em formato `.json` limpo para conferência manual.
+| **Auditoria & Gargalos** | Análise de tempo de limpeza de onda (*Clear Time*). Se o tempo exceder 60s, sugere rebaixar o estágio para manter a rentabilidade de baús. |
+| **⚡ Telemetria V2** | Diagnóstico em tempo real de `Player.log`, cooldowns de combate, status de WaitQueue e seeds de sessão. |
+| **🤖 IA-TBH** | Exportador analítico avançado de relatórios Markdown (Template v3.0 END GAME SPEC com Hard Caps e penalidade de Tormento). |
+| **Exportar JSON** | Baixa o arquivo decodificado em formato `.json` limpo para conferência manual. |
 
 ---
 

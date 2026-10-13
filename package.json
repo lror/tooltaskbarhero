@@ -1,0 +1,16 @@
+{
+  "name": "ttbh",
+  "version": "1.0.0",
+  "description": "ToolTaskBarHero - Analítico Client-Side para Taskbar Hero",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "test:e2e": "node tests/e2e_smoke.js",
+    "test:log": "node tests/log_parser.test.js",
+    "test:xss": "node tests/xss_adversarial.test.js",
+    "test": "npm run test:e2e && npm run test:log && npm run test:xss",
+    "validate": "npm run test"
+  },
+  "keywords": ["taskbar-hero", "analytics", "gaming"],
+  "author": "TTBH Team",
+  "license": "MIT"
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolTaskBarHero (TTBH) - Análise Avançada para Taskbar Hero</title>
+    <meta name="description" content="Ferramenta client-side para análise de saves, otimização de builds e telemetria avançada do jogo Taskbar Hero. 100% offline, zero telemetry.">
+    <meta property="og:title" content="ToolTaskBarHero - TTBH">
+    <meta property="og:description" content="Análise avançada de saves para Taskbar Hero. BiS Finder, Cube Optimizer, Telemetry V2 e muito mais.">
+    <meta property="og:type" content="website">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Hero */
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(ellipse at top, #1e293b 0%, #0f172a 70%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpattern id='grid' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='rgba(59,130,246,0.1)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23grid)'/%3E%3C/svg%3E"); opacity: 0.3; }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .hero .tagline { font-size: 1.5rem; color: #94a3b8; margin-bottom: 2rem; }
+        .hero .badge { display: inline-block; background: rgba(59, 130, 246, 0.2); border: 1px solid #3b82f6; color: #60a5fa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; margin-bottom: 2rem; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: white; padding: 1rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.5); }
+        
+        /* Features */
+        .features { padding: 6rem 0; background: #0f172a; }
+        .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #f1f5f9; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .feature-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; color: #f1f5f9; }
+        .feature-card p { color: #94a3b8; font-size: 0.95rem; }
+        
+        /* Privacy Banner */
+        .privacy-banner { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 3rem; text-align: center; margin: 4rem 0; }
+        .privacy-banner h2 { color: #10b981; margin-bottom: 1rem; font-size: 2rem; }
+        .privacy-banner p { color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        
+        /* Footer */
+        footer { background: #020617; padding: 3rem 0; text-align: center; color: #64748b; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer a { color: #60a5fa; text-decoration: none; margin: 0 1rem; }
+        footer a:hover { color: #93c5fd; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content container">
+            <div class="badge">🎮 v1.0.0 Production-Ready</div>
+            <h1>ToolTaskBarHero</h1>
+            <p class="tagline">A ferramenta definitiva para análise de saves, otimização de builds e telemetria avançada do Taskbar Hero</p>
+            <a href="../../index.html" class="cta-button">🚀 Usar Agora (100% Offline)</a>
+            <p style="margin-top: 1rem; color: #64748b; font-size: 0.9rem;">Nenhum download necessário • Rode localmente • Zero telemetry</p>
+        </div>
+    </section>
+
+    <section class="features container">
+        <h2>6 Módulos Poderosos em Uma Só Ferramenta</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚔️</div>
+                <h3>BiS Finder</h3>
+                <p>Encontre o Best-in-Slot para cada herói baseado no seu inventário atual e stats de combate reais.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎲</div>
+                <h3>Cube Optimizer</h3>
+                <p>Simule combinações do cubo de síntese com guardrails inteligentes para maximizar seu retorno.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Telemetry V2</h3>
+                <p>Diagnóstico em tempo real de ciclos de combate, fila de espera, seeds de sessão e integridade de progressão.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Exporter</h3>
+                <p>Exporte relatórios otimizados para IAs com anonimização automática de dados sensíveis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Stash Value</h3>
+                <p>Calcule o valor total do seu inventário com cotações de mercado atualizadas e fallback inteligente.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Progress Tracking</h3>
+                <p>Histórico local de evolução da conta com gráficos de stage, ouro e itens Tier 7+ ao longo do tempo.</p>
+            </div>
+        </div>
+
+        <div class="privacy-banner">
+            <h2>🔒 100% Client-Side. Zero Telemetry.</h2>
+            <p>Seus saves, logs e dados NUNCA saem do seu navegador. Nenhuma conexão externa, nenhum tracking, nenhum servidor. Privacidade total por design.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 1rem;"><strong>ToolTaskBarHero</strong> • v1.0.0 • Open Source</p>
+            <p>
+                <a href="../../docs/legal/PRIVACY.md">Política de Privacidade</a>
+                <a href="../../docs/legal/TERMS.md">Termos de Uso</a>
+                <a href="../../CHANGELOG.md">Changelog</a>
+                <a href="../../RELEASE_NOTES_v1.0.0.md">Release Notes</a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">Feito com 💙 para a comunidade Taskbar Hero</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Normalização de line endings
+* text=auto
+
+# Forçar LF para arquivos de código
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Documentos
+*.pdf binary
+*.doc binary
+*.docx binary
+*.xls binary
+*.xlsx binary
