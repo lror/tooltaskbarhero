@@ -143,6 +143,24 @@ Consulte o **[Guia Completo de Smart Upload](./docs/SMART_UPLOAD.md)** para mais
 
 ---
 
+## 🙏 Agradecimentos
+
+O TTBH é construído sobre os ombros de gigantes. Agradecemos profundamente:
+
+- **Taskbar Hero** (Tesseract Studio) — O jogo incrível que inspirou esta ferramenta
+- **Easy Save 3** (Moodkie) — Sistema de save robusto e bem documentado
+- **Comunidade Taskbar Hero** — Feedback constante e testes beta
+- **Node.js & Python** — Runtimes estáveis e bem documentados
+- **GitHub CLI** — Automação de publicação simplificada
+- **OWASP** — Framework de segurança gratuito e abrangente
+- **Google Fonts (Inter)** — Tipografia limpa e moderna
+- **Web Crypto API** — Criptografia nativa do navegador
+- **Todos os contribuidores open source** — Sem vocês, este projeto não existiria
+
+Veja a lista completa em [CREDITS.md](./CREDITS.md).
+
+---
+
 ## 📄 Licença
 
 Este projeto está licenciado sob a **MIT License** — veja o arquivo [LICENSE](./LICENSE) para detalhes.
