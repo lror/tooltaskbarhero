@@ -3,6 +3,15 @@
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
+## [1.0.1] - 2026-10-14
+### Fixed
+- Primeira execução em clone limpo não exibe mais erro vermelho de symlink Steam ausente (sonda silenciosa + botão opcional).
+- Badge de status inicia neutro ("Aguardando save").
+- favicon.svg linkado (elimina 404).
+- "Log de Demonstração" usa fixture versionado no repo.
+### Added
+- tools/setup_steam_link.sh, docs/PRE-REQUISITOS.md, guia de primeira execução na UI.
+
 ## [1.0.0] - 2026-10-13
 ### 🛡️ Segurança (Hardening)
 - Implementada Content Security Policy (CSP) restritiva (`RSK-SEC-002`).

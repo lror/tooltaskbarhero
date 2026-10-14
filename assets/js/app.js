@@ -228,12 +228,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 const buffer = await response.arrayBuffer();
                 await processBuffer(buffer, "SaveFile_Live.es3 (Steam Linux)");
             } catch (err) {
-                console.error(err);
-                showError("Não foi possível carregar o save automaticamente da Steam: " + err.message + ". Por favor, arraste o arquivo ou use o botão de procurar arquivo.");
-                statusText.textContent = "Erro na leitura";
+                console.warn(err);
+                markSteamOptional();
+                // Mostra guia informativo em vez de banner de erro vermelho
+                showSteamInfoGuide();
             }
         });
     }
+
+    function showSteamInfoGuide() {
+        if (!uploadError) return;
+        uploadError.classList.remove('hidden');
+        uploadError.style.background = 'rgba(14, 165, 233, 0.1)';
+        uploadError.style.borderColor = '#38bdf8';
+        uploadError.style.color = '#e0f2fe';
+        uploadError.innerHTML = `
+            <div style="font-weight: 600; margin-bottom: 0.4rem; color: #38bdf8; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span>ℹ️</span> Atalho Steam não configurado (opcional)
+            </div>
+            <p style="margin: 0.25rem 0 0.5rem; font-size: 0.85rem; color: #cbd5e1;">
+                O atalho <code>steam_save</code> ainda não foi criado neste ambiente. Você pode:
+            </p>
+            <div style="font-size: 0.82rem; text-align: left; max-width: 500px; margin: 0 auto; line-height: 1.6; color: #e2e8f0;">
+                <div>1. Rodar no terminal: <code>bash tools/setup_steam_link.sh</code></div>
+                <div>2. Ou clicar em <b>"📁 Selecionar Pasta Completa"</b> ou <b>"⚡ Modo Demo"</b></div>
+            </div>
+        `;
+    }
+
+    function markSteamOptional() {
+        const btn = document.getElementById('btn-load-steam-direct');
+        const badge = document.getElementById('status-text');
+        if (btn) {
+            btn.title = 'Symlink steam_save não configurado (opcional). Rode: bash tools/setup_steam_link.sh';
+            btn.classList.add('btn-optional');
+        }
+        if (badge && (badge.textContent.includes('Erro') || badge.textContent.includes('Carregando'))) {
+            badge.textContent = 'Aguardando save';
+        }
+    }
+    window.markSteamOptional = markSteamOptional;
 
     // --- Modal Handlers ---
     if (btnCloseModal) {
@@ -380,8 +414,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!msg) {
             uploadError.innerHTML = "";
             uploadError.classList.add('hidden');
+            uploadError.style.background = '';
+            uploadError.style.borderColor = '';
+            uploadError.style.color = '';
         } else {
             uploadError.classList.remove('hidden');
+            uploadError.style.background = '';
+            uploadError.style.borderColor = '';
+            uploadError.style.color = '';
 
             const hasExcerpt = msg.includes("TRECHO:");
             let baseMsg = msg;

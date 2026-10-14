@@ -1,6 +1,6 @@
 {
   "name": "ttbh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ToolTaskBarHero - Analítico Client-Side para Taskbar Hero",
   "scripts": {
     "serve": "python3 -m http.server 8000",

@@ -346,8 +346,8 @@ export function setupPlayerTelemetryUI() {
                 try {
                     const res = await fetch('/steam_save/Player.log?t=' + Date.now());
                     if (!res.ok) {
-                        // Tenta fallback em /save/Player.log
-                        const fallbackRes = await fetch('/save/Player.log?t=' + Date.now());
+                        // Fallback no fixture de teste versionado
+                        const fallbackRes = await fetch('/tests/player_log_fixture.txt?t=' + Date.now());
                         if (!fallbackRes.ok) throw new Error('Player.log não encontrado no caminho padrão.');
                         const text = await fallbackRes.text();
                         activeTelemetry = new PlayerTelemetry(text);
@@ -373,7 +373,7 @@ export function setupPlayerTelemetryUI() {
                 const origText = btnLoadDemoLog.innerHTML;
                 btnLoadDemoLog.innerHTML = `<span>⏳</span> Carregando...`;
                 try {
-                    const res = await fetch('/save/Player.log?t=' + Date.now());
+                    const res = await fetch('/tests/player_log_fixture.txt?t=' + Date.now());
                     if (!res.ok) throw new Error(`HTTP ${res.status}`);
                     const text = await res.text();
                     activeTelemetry = new PlayerTelemetry(text);

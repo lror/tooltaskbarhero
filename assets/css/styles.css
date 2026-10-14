@@ -191,6 +191,16 @@ h1, h2, h3, h4 {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
 }
+.btn-optional {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px dashed rgba(255, 255, 255, 0.25) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: none !important;
+}
+.btn-optional:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: var(--text-primary) !important;
+}
 
 /* Upload Section */
 .upload-hero {

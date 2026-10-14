@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToolTaskBarHero (TTBH) - Save Analyzer & Progression Optimizer</title>
     <!-- Fonts -->
+    <link rel="icon" type="image/svg+xml" href="assets/branding/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" integrity="sha384-Ww3iylDHeh0lenEQV6v8tqX3oWv6wTRB/y1vkxT8vjtBBZ8g3Y7t7/V9KXMsZcRw" crossorigin="anonymous">
@@ -27,7 +28,7 @@
             <div class="nav-actions">
                 <div id="save-status" class="nav-status">
                     <span class="status-dot" id="status-dot"></span>
-                    <span id="status-text">Nenhum save conectado</span>
+                    <span id="status-text">Aguardando save</span>
                 </div>
                 <button id="btn-load-demo" class="btn btn-secondary btn-sm" title="Carregar dados de exemplo para demonstração">
                     ⚡ Modo Demo
@@ -56,6 +57,18 @@
                         📄 Procurar Arquivo Manualmente
                     </button>
                 </div>
+
+                <details class="glass-card" style="padding:1rem;margin-bottom:1rem;text-align:left;">
+                  <summary style="cursor:pointer;color:#60a5fa;font-weight:600;">📘 Primeira vez aqui? Guia rápido de configuração</summary>
+                  <ol style="margin:0.75rem 0 0 1.25rem;line-height:1.9;font-size:0.9rem;color:#e2e8f0;">
+                    <li><b>Sirva localmente</b> (obrigatório — crypto.subtle exige contexto seguro):<br>
+                        <code>python3 -m http.server 8000</code> ou <code>npx http-server -p 8000</code></li>
+                    <li><b>Sem save do jogo?</b> Clique em <b>⚡ Modo Demo</b> — funciona 100% offline, zero arquivos.</li>
+                    <li><b>(Opcional, Linux/Proton)</b> Auto-load da Steam: rode <code>bash tools/setup_steam_link.sh</code> uma vez.</li>
+                    <li><b>(Opcional)</b> Preços ao vivo do Market: rode <code>python3 tools/steam_proxy.py</code> em outro terminal.</li>
+                  </ol>
+                  <p style="margin:0.75rem 0 0;font-size:0.8rem;color:#8b9bb4;">Nada além de um navegador e um servidor HTTP é necessário. Detalhes em <code>docs/PRE-REQUISITOS.md</code>.</p>
+                </details>
 
                 <!-- Input oculto para seleção de pasta com webkitdirectory -->
                 <input type="file" id="input-folder-select" webkitdirectory directory multiple style="display: none;" accept=".es3,.bak,.log,.dat">

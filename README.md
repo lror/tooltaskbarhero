@@ -3,7 +3,7 @@
 **Análise avançada de saves para Taskbar Hero — 100% client-side, zero telemetry**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/seu-usuario/ttbh/releases)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/lror/tooltaskbarhero/releases)
 [![Tests](https://img.shields.io/badge/tests-34%2F34%20passing-brightgreen.svg)](./tests/)
 
 ---
@@ -31,11 +31,11 @@ O **ToolTaskBarHero (TTBH)** é uma ferramenta analítica de alta performance pa
 ## ⚡ Início Rápido
 
 ### Pré-requisitos
+- Navegador moderno (Chrome, Edge, Firefox, Brave).
+- Servidor HTTP local (obrigatório para Web Crypto API): Python 3 ou Node.js.
+- Detalhes completos em [docs/PRE-REQUISITOS.md](docs/PRE-REQUISITOS.md).
 
-- Navegador moderno (Chrome, Firefox, Edge, Brave)
-- Python 3.x ou Node.js (para servidor local)
-
-### Instalação
+### Execução em 1 Passo
 
 ```bash
 # Inicie o servidor local (escolha uma opção)
@@ -44,12 +44,14 @@ python3 -m http.server 8000
 npx http-server -p 8000
 ```
 
-### Uso
+Abra `http://localhost:8000` no seu navegador.
 
-1. Abra `http://localhost:8000` no navegador
-2. Clique em **"⚡ Modo Demo"** para carregar dados de demonstração
-3. Ou use o **Smart Upload** (detecção automática de SO) ou arraste seu `SaveFile_Live.es3`
-4. Explore as abas analíticas e a aba **🔨 BUILD**
+### Sem Save do Jogo?
+- Clique em **"⚡ Modo Demo"** na barra superior — a ferramenta é 100% autônoma e demonstrável sem nenhum arquivo local.
+
+### Integrações Opcionais
+- **Auto-load Steam (Linux/Proton):** Rode `bash tools/setup_steam_link.sh` para vincular automaticamente o save ativo.
+- **Cotações Steam Market:** Rode `python3 tools/steam_proxy.py` em outro terminal.
 
 ---
 
